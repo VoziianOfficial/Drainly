@@ -10,9 +10,26 @@
    ========================================================== */
 
 const companyName = "Drainly";
+const defaultCompanyName = "Drainly";
+const companySlug = companyName.toLowerCase().replace(/[^a-z0-9]+/g, "");
+
+const companyPhone = "+1 888 740 2168";
+const companyPhoneHref = "+18887402168";
+const companyEmail = `hello@${companySlug}match.com`;
+
+const companyAddress = {
+    line1: "401 Congress Avenue",
+    city: "Austin",
+    state: "TX",
+    zip: "78701",
+    country: "USA"
+};
+
+companyAddress.full = `${companyAddress.line1}, ${companyAddress.city}, ${companyAddress.state} ${companyAddress.zip}, ${companyAddress.country}`;
 
 window.SITE_CONFIG = {
     companyName,
+    defaultCompanyName,
 
     companyId: "DRN-GTR-7284",
 
@@ -25,20 +42,13 @@ window.SITE_CONFIG = {
             `${companyName} is an independent gutter matching platform that helps homeowners compare local providers for gutter installation, replacement, repair, and cleaning requests.`
     },
 
-    phone: "+1 888 740 2168",
-    phoneHref: "+18887402168",
-    phoneLabel: "Call Drainly",
+    phone: companyPhone,
+    phoneHref: companyPhoneHref,
+    phoneLabel: `Call ${companyName}`,
 
-    email: "hello@drainlymatch.com",
+    email: companyEmail,
 
-    address: {
-        line1: "401 Congress Avenue",
-        city: "Austin",
-        state: "TX",
-        zip: "78701",
-        country: "USA",
-        full: "401 Congress Avenue, Austin, TX 78701, USA"
-    },
+    address: companyAddress,
 
     serviceArea: "Independent gutter provider matching across the United States",
 
@@ -49,7 +59,7 @@ window.SITE_CONFIG = {
         "Disclaimer: This site is a free service to assist homeowners in connecting with local service providers. All contractors/providers are independent and this site does not warrant or guarantee any work performed. It is the responsibility of the homeowner to verify that the hired contractor furnishes the necessary license and insurance required for the work being performed. All persons depicted in a photo or video are actors or models and not contractors listed on this site.",
 
     legalNotice:
-        "This website is an independent matching platform and does not perform gutter services directly. Provider availability, quote details, timing, and service scope may vary by location and by independent company.",
+        `${companyName} is an independent matching platform and does not perform gutter services directly. Provider availability, quote details, timing, and service scope may vary by location and by independent company.`,
 
     navigation: [
         {
@@ -102,11 +112,11 @@ window.SITE_CONFIG = {
             heroTitle:
                 "Compare gutter installation providers without a scattered search.",
             heroText:
-                "Drainly helps homeowners begin with a clear installation request, then connect with independent local providers who may fit the project scope, location, and timing.",
+                `${companyName} helps homeowners begin with a clear installation request, then connect with independent local providers who may fit the project scope, location, and timing.`,
             overviewTitle:
                 "A cleaner way to begin a gutter installation request.",
             overviewText:
-                "New gutter installation can depend on roofline shape, water flow, home size, material preference, downspout placement, and local provider availability. Drainly keeps the first step simple by helping homeowners organize the request before comparing independent providers.",
+                `New gutter installation can depend on roofline shape, water flow, home size, material preference, downspout placement, and local provider availability. ${companyName} keeps the first step simple by helping homeowners organize the request before comparing independent providers.`,
             factorsTitle:
                 "What may affect provider recommendations?",
             factors: [
@@ -129,9 +139,9 @@ window.SITE_CONFIG = {
                 "Submit a simple request and continue with independent providers that may serve your area.",
             faq: [
                 {
-                    question: "Does Drainly install gutters directly?",
+                    question: `Does ${companyName} install gutters directly?`,
                     answer:
-                        "No. Drainly is an independent matching platform. It helps homeowners connect with local gutter providers, but it does not perform installation work."
+                        `No. ${companyName} is an independent matching platform. It helps homeowners connect with local gutter providers, but it does not perform installation work.`
                 },
                 {
                     question: "Can I compare more than one installation provider?",
@@ -162,7 +172,7 @@ window.SITE_CONFIG = {
             heroTitle:
                 "Find provider options for gutter replacement projects.",
             heroText:
-                "Drainly helps homeowners describe replacement needs clearly, compare local provider availability, and continue with independent companies suited to the request.",
+                `${companyName} helps homeowners describe replacement needs clearly, compare local provider availability, and continue with independent companies suited to the request.`,
             overviewTitle:
                 "Replacement requests often need better context.",
             overviewText:
@@ -194,9 +204,9 @@ window.SITE_CONFIG = {
                         "Replacement may be considered when gutters are heavily damaged, frequently leaking, sagging, rusted, or no longer routing water effectively."
                 },
                 {
-                    question: "Does Drainly recommend one specific provider?",
+                    question: `Does ${companyName} recommend one specific provider?`,
                     answer:
-                        "No. Drainly helps homeowners compare available independent provider options. The homeowner is responsible for reviewing and choosing a provider."
+                        `${companyName} helps homeowners compare available independent provider options. The homeowner is responsible for reviewing and choosing a provider.`
                 },
                 {
                     question: "Should I verify license and insurance?",
@@ -222,7 +232,7 @@ window.SITE_CONFIG = {
             heroTitle:
                 "Compare local gutter repair provider options.",
             heroText:
-                "Drainly helps homeowners describe visible gutter concerns and connect with independent providers who may evaluate repair needs in their area.",
+                `${companyName} helps homeowners describe visible gutter concerns and connect with independent providers who may evaluate repair needs in their area.`,
             overviewTitle:
                 "Repair requests work best with clear details.",
             overviewText:
@@ -246,7 +256,7 @@ window.SITE_CONFIG = {
             ctaTitle:
                 "Start a gutter repair request.",
             ctaText:
-                "Use Drainly to organize your request and compare independent provider options.",
+                `Use ${companyName} to organize your request and compare independent provider options.`,
             faq: [
                 {
                     question: "Can small gutter leaks be repaired?",
@@ -259,9 +269,9 @@ window.SITE_CONFIG = {
                         "Photos may help providers understand visible symptoms, location, and possible scope, but final recommendations can vary after inspection."
                 },
                 {
-                    question: "Does Drainly guarantee repair work?",
+                    question: `Does ${companyName} guarantee repair work?`,
                     answer:
-                        "No. Drainly does not perform or guarantee work. All contractors or providers are independent."
+                        `${companyName} does not perform or guarantee work. All contractors or providers are independent.`
                 }
             ]
         },
@@ -282,11 +292,11 @@ window.SITE_CONFIG = {
             heroTitle:
                 "Find gutter cleaning providers with a simpler request flow.",
             heroText:
-                "Drainly helps homeowners start a gutter cleaning request and compare independent providers based on location, service category, and availability.",
+                `${companyName} helps homeowners start a gutter cleaning request and compare independent providers based on location, service category, and availability.`,
             overviewTitle:
                 "Routine cleaning can help prevent bigger issues.",
             overviewText:
-                "Gutter cleaning requests often involve clogged sections, overflowing water, leaf buildup, downspout blockages, or seasonal maintenance. Drainly helps homeowners present the request clearly before connecting with providers.",
+                `Gutter cleaning requests often involve clogged sections, overflowing water, leaf buildup, downspout blockages, or seasonal maintenance. ${companyName} helps homeowners present the request clearly before connecting with providers.`,
             factorsTitle:
                 "What can affect cleaning provider availability?",
             factors: [
@@ -386,7 +396,7 @@ window.SITE_CONFIG = {
     },
 
     consentBanner: {
-        storageKey: "drainly_policy_consent",
+        storageKey: `${companySlug}_policy_consent`,
         title: "Privacy and policy notice",
         text:
             `${companyName} uses essential site functionality and may use cookies or similar technologies to improve the request experience. Review our policies before continuing.`,
@@ -397,7 +407,7 @@ window.SITE_CONFIG = {
     contactForm: {
         title: "Start a gutter matching request",
         text:
-            "Share a few details about your gutter project. Drainly does not perform work directly, but helps route requests toward independent provider options.",
+            `Share a few details about your gutter project. ${companyName} does not perform work directly, but helps route requests toward independent provider options.`,
         projectTypes: [
             "Gutter installation",
             "Gutter replacement",
@@ -407,3 +417,5 @@ window.SITE_CONFIG = {
         ]
     }
 };
+
+console.log("CONFIG LOADED:", window.SITE_CONFIG.companyName, window.SITE_CONFIG.address.full);

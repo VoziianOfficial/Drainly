@@ -1,20 +1,5 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — GLOBAL SCRIPT
-   File: /js/main.js
-
-   Responsibilities:
-   - Apply config values from js/config.js
-   - Render global header
-   - Render fullscreen mobile menu
-   - Render footer
-   - Apply title/meta from config
-   - Initialize consent banner
-   - Initialize FAQ accordion
-   - Refresh Lucide icons
-   - Prevent common UX issues
-   ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
     const config = window.SITE_CONFIG;
@@ -26,13 +11,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ensureSkipLink();
     applyPageMeta();
+
     renderHeader();
     renderFooter();
+
     injectConfigValues();
+    replaceStaticCompanyName();
+    updateMapEmbeds();
+
     initMobileMenu();
     initConsentBanner();
     initFaqAccordions();
     initRequestForms();
+
     setActiveLinks();
     refreshIcons();
 });
@@ -63,11 +54,13 @@ function escapeHtml(value) {
 
 function setText(selector, value) {
     document.querySelectorAll(selector).forEach((element) => {
-        element.textContent = value;
+        element.textContent = value ?? "";
     });
 }
 
 function setAttribute(selector, attribute, value) {
+    if (value === undefined || value === null) return;
+
     document.querySelectorAll(selector).forEach((element) => {
         element.setAttribute(attribute, value);
     });
@@ -219,8 +212,8 @@ function renderHeader() {
                     <a class="logo" href="index.html" aria-label="${escapeHtml(config.brand?.logoLabel || config.companyName)}">
                         <span class="logo-mark" aria-hidden="true"></span>
                         <span class="logo-text">
-                            <span class="logo-name">${escapeHtml(config.companyName)}</span>
-                            <span class="logo-tagline">${escapeHtml(config.brand?.shortTagline || "")}</span>
+                            <span class="logo-name" data-company-name>${escapeHtml(config.companyName)}</span>
+                            <span class="logo-tagline" data-brand-short-tagline>${escapeHtml(config.brand?.shortTagline || "")}</span>
                         </span>
                     </a>
 
@@ -388,21 +381,23 @@ function renderFooter() {
 function injectConfigValues() {
     const config = getConfig();
 
-    setText("[data-company-name]", config.companyName);
-    setText("[data-company-id]", config.companyId);
+    setText("[data-company-name]", config.companyName || "");
+    setText("[data-company-id]", config.companyId || "");
+
     setText("[data-brand-short-tagline]", config.brand?.shortTagline || "");
     setText("[data-brand-tagline]", config.brand?.tagline || "");
     setText("[data-brand-description]", config.brand?.description || "");
 
-    setText("[data-phone-text]", config.phone);
-    setText("[data-phone-label]", config.phoneLabel || config.phone);
-    setAttribute("[data-phone-link]", "href", `tel:${config.phoneHref}`);
+    setText("[data-phone-text]", config.phone || "");
+    setText("[data-phone-label]", config.phoneLabel || config.phone || "");
+    setAttribute("[data-phone-link]", "href", `tel:${config.phoneHref || ""}`);
 
-    setText("[data-email-text]", config.email);
-    setAttribute("[data-email-link]", "href", `mailto:${config.email}`);
+    setText("[data-email-text]", config.email || "");
+    setAttribute("[data-email-link]", "href", `mailto:${config.email || ""}`);
 
     setText("[data-address]", config.address?.full || "");
     setText("[data-service-area]", config.serviceArea || "");
+
     setText("[data-footer-text]", config.footerText || "");
     setText("[data-disclaimer]", config.disclaimer || "");
     setText("[data-legal-notice]", config.legalNotice || "");
@@ -484,7 +479,19 @@ function setActiveLinks() {
     const currentPage = getCurrentFileName();
 
     document.querySelectorAll("a[href]").forEach((link) => {
-        const linkPage = normalizePath(link.getAttribute("href"));
+        const href = link.getAttribute("href");
+
+        if (
+            !href ||
+            href.startsWith("#") ||
+            href.startsWith("tel:") ||
+            href.startsWith("mailto:") ||
+            href.startsWith("http")
+        ) {
+            return;
+        }
+
+        const linkPage = normalizePath(href);
 
         if (linkPage === currentPage) {
             link.setAttribute("aria-current", "page");
@@ -830,6 +837,90 @@ function showFormStatus(form, type, message) {
 }
 
 /* =========================
+   STATIC BRAND REPLACEMENT
+   ========================= */
+
+function replaceStaticCompanyName() {
+    const config = getConfig();
+    const oldName = config.defaultCompanyName || "Drainly";
+    const newName = config.companyName || oldName;
+
+    if (!oldName || !newName || oldName === newName) return;
+
+    const ignoredTags = new Set([
+        "SCRIPT",
+        "STYLE",
+        "NOSCRIPT",
+        "IFRAME"
+    ]);
+
+    const walker = document.createTreeWalker(
+        document.body,
+        NodeFilter.SHOW_TEXT,
+        {
+            acceptNode(node) {
+                const parent = node.parentElement;
+
+                if (!parent || ignoredTags.has(parent.tagName)) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                if (!node.nodeValue.includes(oldName)) {
+                    return NodeFilter.FILTER_REJECT;
+                }
+
+                return NodeFilter.FILTER_ACCEPT;
+            }
+        }
+    );
+
+    const nodes = [];
+
+    while (walker.nextNode()) {
+        nodes.push(walker.currentNode);
+    }
+
+    nodes.forEach((node) => {
+        node.nodeValue = node.nodeValue.replaceAll(oldName, newName);
+    });
+
+    document.querySelectorAll("[aria-label], [alt], [title], [placeholder]").forEach((element) => {
+        ["aria-label", "alt", "title", "placeholder"].forEach((attribute) => {
+            const value = element.getAttribute(attribute);
+
+            if (value && value.includes(oldName)) {
+                element.setAttribute(attribute, value.replaceAll(oldName, newName));
+            }
+        });
+    });
+}
+
+/* =========================
+   MAP EMBEDS FROM CONFIG ADDRESS
+   ========================= */
+
+function updateMapEmbeds() {
+    const config = getConfig();
+    const address = config.address?.full;
+
+    if (!address) return;
+
+    document.querySelectorAll("[data-map-embed]").forEach((iframe) => {
+        const query = encodeURIComponent(address);
+
+        iframe.setAttribute(
+            "src",
+            `https://www.google.com/maps?q=${query}&output=embed`
+        );
+
+        iframe.setAttribute(
+            "title",
+            `${config.companyName || "Company"} address map`
+        );
+    });
+}
+
+/* =========================
    PUBLIC HELPERS FOR PAGE FILES
    ========================= */
 
@@ -840,5 +931,7 @@ window.DRAINLY = {
     getServiceById,
     initFaqAccordions,
     injectConfigValues,
+    replaceStaticCompanyName,
+    updateMapEmbeds,
     refreshIcons
 };
