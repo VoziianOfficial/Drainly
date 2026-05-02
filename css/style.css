@@ -1875,3 +1875,46 @@ body.menu-open .site-header {
         flex: 0 0 17px !important;
     }
 }
+
+        /* ==========================================================
+       MOBILE MENU SCROLL FIX
+       ========================================================== */
+    
+        .site-menu {
+            height: 100dvh;
+            overflow: hidden;
+        }
+    
+        .site-menu-panel {
+            height: 100dvh !important;
+            max-height: 100dvh !important;
+            min-height: 0 !important;
+            grid-template-rows: auto minmax(0, 1fr) auto !important;
+            overflow: hidden !important;
+        }
+    
+        .menu-panel-body {
+            min-height: 0 !important;
+            max-height: 100% !important;
+            overflow-y: auto !important;
+            overflow-x: hidden !important;
+            -webkit-overflow-scrolling: touch;
+            overscroll-behavior: contain;
+        }
+    
+        .menu-contact {
+            flex-shrink: 0;
+        }
+    
+        /* Mobile safe area */
+        @media (max-width: 640px) {
+            .site-menu-panel {
+                height: 100dvh !important;
+                max-height: 100dvh !important;
+                padding: 18px 18px max(18px, env(safe-area-inset-bottom)) !important;
+            }
+    
+            .menu-panel-body {
+                padding: 20px 0 !important;
+            }
+        }
