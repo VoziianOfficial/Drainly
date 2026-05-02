@@ -481,409 +481,414 @@
     }
 }
 
-/* =========================
-   REQUEST + FAQ
-   ========================= */
+/* ==========================================================
+   REQUEST + FAQ — FULL REDESIGN
+   New unique classes, old home-request styles will not affect it.
+   ========================================================== */
 
-.home-request {
-    position: relative;
+.request-clean {
+    padding-top: clamp(30px, 4vw, 50px);
+    padding-bottom: clamp(30px, 4vw, 50px);
 }
 
-.home-request-layout {
+.request-clean-shell {
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.75fr);
-    gap: 18px;
-    align-items: start;
-}
-
-.home-request-card,
-.home-faq-panel {
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    background: #fff;
-    box-shadow: var(--shadow-card);
-}
-
-.home-request-card {
-    display: grid;
-    gap: 18px;
-    padding: clamp(20px, 3vw, 32px);
-}
-
-.home-request-card h2 {
-    max-width: 620px;
-}
-
-.mini-request-form {
-    display: grid;
-    gap: 14px;
-}
-
-.home-faq-panel {
-    position: sticky;
-    top: calc(var(--header-height) + 18px);
-    display: grid;
-    gap: 18px;
-    padding: clamp(20px, 3vw, 28px);
-}
-
-.home-faq-panel h2 {
-    font-size: clamp(1.75rem, 3vw, 2.65rem);
-}
-
-.home-faq-cta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-
-@media (max-width: 1180px) {
-    .home-hero-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .home-hero-content {
-        max-width: 900px;
-    }
-
-    .home-hero-visual {
-        min-height: 520px;
-    }
-
-    .hero-photo-main {
-        inset: 0;
-    }
-
-    .home-service-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .home-process-panel {
-        grid-template-columns: 1fr;
-    }
-
-    .home-process-media {
-        min-height: 380px;
-    }
-
-    .home-process-media img {
-        min-height: 380px;
-    }
-
-    .home-request-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .home-faq-panel {
-        position: static;
-    }
-}
-
-@media (max-width: 760px) {
-    .home-hero {
-        padding-top: 34px;
-    }
-
-    .home-hero-content {
-        gap: 16px;
-    }
-
-    .home-hero-actions {
-        width: 100%;
-    }
-
-    .home-hero-actions .btn {
-        flex: 1;
-    }
-
-    .home-hero-visual {
-        min-height: 430px;
-    }
-
-    .hero-photo-main {
-        border-radius: 32px;
-    }
-
-    .hero-floating-card {
-        min-width: 170px;
-        padding: 13px 14px;
-    }
-
-    .hero-card-top {
-        top: 18px;
-        left: 12px;
-    }
-
-    .hero-card-bottom {
-        right: 12px;
-        bottom: 22px;
-    }
-
-    .hero-orbit-card {
-        top: auto;
-        right: auto;
-        left: 12px;
-        bottom: 106px;
-    }
-
-    .home-service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .square-service-card {
-        aspect-ratio: auto;
-    }
-
-    .home-process-panel {
-        border-radius: 28px;
-        padding: 12px;
-    }
-
-    .home-process-media {
-        min-height: 320px;
-        border-radius: 24px;
-    }
-
-    .home-process-media img {
-        min-height: 320px;
-    }
-
-    .process-steps article {
-        grid-template-columns: 1fr;
-    }
-
-    .process-steps article>span {
-        width: fit-content;
-        min-width: 44px;
-        padding-inline: 12px;
-    }
-
-    .home-request-card,
-    .home-faq-panel {
-        border-radius: 28px;
-    }
-}
-
-@media (max-width: 480px) {
-    .home-hero-note {
-        border-radius: 18px;
-    }
-
-    .home-hero-actions {
-        flex-direction: column;
-    }
-
-    .home-hero-visual {
-        min-height: 390px;
-    }
-
-    .hero-floating-card {
-        min-width: 150px;
-    }
-
-    .hero-floating-card strong {
-        font-size: 0.88rem;
-    }
-
-    .hero-floating-card span {
-        font-size: 0.68rem;
-    }
-
-    .hero-orbit-card {
-        display: none;
-    }
-
-    .home-faq-cta {
-        flex-direction: column;
-    }
-}
-
-/* =========================
-   REQUEST + FAQ — COMPACT VERSION
-   ========================= */
-
-.home-request-compact {
-    padding-top: clamp(30px, 4vw, 52px);
-    padding-bottom: clamp(30px, 4vw, 52px);
-}
-
-.home-request-compact .home-request-layout {
-    grid-template-columns: minmax(0, 0.98fr) minmax(340px, 0.72fr);
+    grid-template-columns: minmax(0, 0.85fr) minmax(360px, 0.64fr) minmax(280px, 0.5fr);
     gap: 14px;
     align-items: stretch;
+    width: min(100%, 1180px);
+    margin-inline: auto;
 }
 
-.home-request-compact .home-request-card,
-.home-request-compact .home-faq-panel {
+/* LEFT INFO */
+
+.request-clean-info {
+    display: grid;
+    align-content: center;
+    gap: 14px;
+    min-height: 390px;
+    border: 1px solid var(--color-border);
     border-radius: 28px;
+    background:
+        linear-gradient(135deg, #fff, rgba(228, 226, 222, 0.5));
+    padding: clamp(20px, 3vw, 30px);
+    box-shadow: 0 12px 32px rgba(23, 23, 26, 0.055);
+}
+
+.request-clean-info h2 {
+    max-width: 520px;
+    font-size: clamp(1.85rem, 3.4vw, 3.2rem);
+    line-height: 1.03;
+}
+
+.request-clean-info p {
+    max-width: 500px;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.58;
+}
+
+.request-clean-points {
+    display: grid;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.request-clean-points article {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-pill);
+    background: #fff;
+    padding: 8px 11px;
+}
+
+.request-clean-points i,
+.request-clean-points svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent);
+}
+
+.request-clean-points span {
+    color: var(--color-heading);
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+/* FORM */
+
+.request-clean-form-card {
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    background: #fff;
+    padding: 16px;
     box-shadow: 0 12px 32px rgba(23, 23, 26, 0.06);
 }
 
-.home-request-compact .home-request-card {
-    gap: 14px;
-    padding: clamp(18px, 2.6vw, 26px);
-}
-
-.home-request-compact .home-request-card h2 {
-    max-width: 560px;
-    font-size: clamp(1.75rem, 3vw, 2.85rem);
-}
-
-.home-request-compact .home-request-card .lead {
-    max-width: 620px;
-    font-size: 0.96rem;
-    line-height: 1.6;
-}
-
-.home-request-compact .mini-request-form {
+.request-clean-form {
+    display: grid;
     gap: 12px;
+    width: 100%;
 }
 
-.home-request-compact .form-grid {
-    gap: 11px;
+.request-clean-form-head {
+    display: grid;
+    gap: 4px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--color-border);
 }
 
-.home-request-compact .form-field {
-    gap: 6px;
+.request-clean-form-head h3 {
+    font-size: 1.15rem;
+    letter-spacing: -0.03em;
 }
 
-.home-request-compact .form-field label {
-    font-size: 0.78rem;
+.request-clean-form-head p {
+    color: var(--color-muted);
+    font-size: 0.8rem;
+    line-height: 1.4;
 }
 
-.home-request-compact .form-field input,
-.home-request-compact .form-field select,
-.home-request-compact .form-field textarea {
-    min-height: 42px;
-    border-radius: 14px;
-    padding: 10px 12px;
-    font-size: 0.92rem;
-}
-
-.home-request-compact .form-field textarea {
-    min-height: 82px;
-    max-height: 82px;
-}
-
-.home-request-compact .form-check {
+.request-clean-fields {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 9px;
-    font-size: 0.82rem;
-    line-height: 1.42;
 }
 
-.home-request-compact .form-check input[type="checkbox"] {
-    width: 18px;
-    height: 18px;
-    flex-basis: 18px;
+.request-clean-fields .form-field {
+    gap: 5px;
 }
 
-.home-request-compact .mini-request-form .btn {
-    width: fit-content;
-    min-height: 43px;
-    padding: 11px 16px;
-    font-size: 0.9rem;
+.request-clean-fields .form-field label {
+    font-size: 0.72rem;
 }
 
-.home-request-compact .form-note {
-    max-width: 680px;
-    font-size: 0.78rem;
-    line-height: 1.5;
-}
-
-/* FAQ panel */
-
-.home-request-compact .home-faq-panel {
-    position: sticky;
-    top: calc(var(--header-height) + 14px);
-    gap: 14px;
-    padding: clamp(18px, 2.6vw, 24px);
-}
-
-.home-request-compact .home-faq-panel h2 {
-    max-width: 440px;
-    font-size: clamp(1.55rem, 2.6vw, 2.35rem);
-}
-
-.home-request-compact .faq-list {
-    gap: 8px;
-}
-
-.home-request-compact .faq-item {
-    border-radius: 17px;
-}
-
-.home-request-compact .faq-question {
-    min-height: 48px;
-    padding: 14px 16px;
-    gap: 12px;
-    font-size: 0.9rem;
-    line-height: 1.3;
-}
-
-.home-request-compact .faq-answer-inner {
-    padding: 0 16px 14px;
-}
-
-.home-request-compact .faq-answer p {
+.request-clean-fields .form-field input,
+.request-clean-fields .form-field select,
+.request-clean-fields .form-field textarea {
+    min-height: 39px;
+    border-radius: 12px;
+    padding: 8px 10px;
     font-size: 0.86rem;
-    line-height: 1.52;
 }
 
-.home-request-compact .home-faq-cta {
+.request-clean-message,
+.request-clean-check {
+    grid-column: 1 / -1;
+}
+
+.request-clean-fields .form-field textarea {
+    min-height: 68px;
+    max-height: 68px;
+    resize: none;
+}
+
+.request-clean-check {
+    margin-top: 2px;
+    color: var(--color-muted);
+    font-size: 0.78rem;
+    line-height: 1.36;
+}
+
+.request-clean-check input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    flex-basis: 17px;
+}
+
+.request-clean-submit {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-top: 2px;
+}
+
+.request-clean-submit .btn {
+    width: auto;
+    min-height: 40px;
+    padding: 9px 14px;
+    font-size: 0.84rem;
+}
+
+.request-clean-submit p {
+    max-width: 190px;
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    line-height: 1.35;
+    text-align: right;
+}
+
+/* FAQ */
+
+.request-clean-faq {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+    min-width: 0;
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    background: var(--color-dark);
+    color: #fff;
+    padding: 16px;
+    box-shadow: var(--shadow-dark);
+}
+
+.request-clean-faq .section-kicker {
+    margin-bottom: 0;
+    border-color: var(--color-border-dark);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.request-clean-faq .section-kicker i,
+.request-clean-faq .section-kicker svg {
+    color: #fff;
+}
+
+.request-clean-faq-head {
+    display: grid;
+    gap: 10px;
+}
+
+.request-clean-faq-head h3 {
+    color: #fff;
+    font-size: 1.35rem;
+    line-height: 1.05;
+}
+
+.request-clean-faq .faq-list {
     gap: 8px;
 }
 
-.home-request-compact .home-faq-cta .btn {
-    min-height: 42px;
-    padding: 10px 15px;
-    font-size: 0.88rem;
+.request-clean-faq .faq-item {
+    border-color: var(--color-border-dark);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.08);
 }
 
-/* Tablet */
+.request-clean-faq .faq-item:hover,
+.request-clean-faq .faq-item.is-open {
+    border-color: rgba(255, 255, 255, 0.34);
+}
 
-@media (max-width: 1100px) {
-    .home-request-compact .home-request-layout {
-        grid-template-columns: 1fr;
+.request-clean-faq .faq-question {
+    min-height: 43px;
+    padding: 11px 12px;
+    color: #fff;
+    font-size: 0.82rem;
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+.request-clean-faq .faq-question i,
+.request-clean-faq .faq-question svg {
+    width: 16px;
+    height: 16px;
+    color: #fff;
+}
+
+.request-clean-faq .faq-answer-inner {
+    padding: 0 12px 12px;
+}
+
+.request-clean-faq .faq-answer p {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.78rem;
+    line-height: 1.45;
+}
+
+.request-clean-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    width: fit-content;
+    margin-top: 2px;
+    color: #fff;
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+.request-clean-link i,
+.request-clean-link svg {
+    width: 15px;
+    height: 15px;
+    transition: transform var(--transition-base);
+}
+
+.request-clean-link:hover i,
+.request-clean-link:hover svg {
+    transform: translateX(3px);
+}
+
+/* TABLET */
+
+@media (max-width: 1120px) {
+    .request-clean-shell {
+        grid-template-columns: minmax(0, 1fr) minmax(320px, 0.72fr);
+        max-width: 850px;
     }
 
-    .home-request-compact .home-faq-panel {
-        position: static;
+    .request-clean-info {
+        grid-column: 1 / -1;
+        min-height: auto;
+    }
+
+    .request-clean-info h2,
+    .request-clean-info p {
+        max-width: 680px;
     }
 }
 
-/* Mobile */
+/* MOBILE */
 
-@media (max-width: 700px) {
-    .home-request-compact {
+@media (max-width: 760px) {
+    .request-clean {
         padding-top: 28px;
         padding-bottom: 34px;
     }
 
-    .home-request-compact .home-request-card,
-    .home-request-compact .home-faq-panel {
+    .request-clean-shell {
+        grid-template-columns: 1fr;
+        width: min(100%, 440px);
+    }
+
+    .request-clean-info,
+    .request-clean-form-card,
+    .request-clean-faq {
         border-radius: 24px;
     }
 
-    .home-request-compact .form-grid {
+    .request-clean-info {
+        min-height: auto;
+        padding: 18px;
+    }
+
+    .request-clean-info h2 {
+        font-size: clamp(1.75rem, 8vw, 2.45rem);
+    }
+
+    .request-clean-fields {
         grid-template-columns: 1fr;
     }
 
-    .home-request-compact .mini-request-form .btn,
-    .home-request-compact .home-faq-cta .btn {
-        width: 100%;
+    .request-clean-submit {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
-    .home-request-compact .home-faq-cta {
-        flex-direction: column;
+    .request-clean-submit p {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .request-clean-submit .btn {
+        width: auto;
     }
 }
 
+/* SMALL MOBILE */
 
+@media (max-width: 420px) {
+    .request-clean-submit .btn {
+        width: 100%;
+    }
 
+    .request-clean-points article {
+        width: 100%;
+    }
+}
+
+/* =========================
+   REQUEST CLEAN — TABLET NARROW INFO
+   ========================= */
+
+@media (min-width: 761px) and (max-width: 1120px) {
+    .request-clean-shell {
+        width: min(100%, 760px) !important;
+        max-width: 760px !important;
+        grid-template-columns: 1fr !important;
+        margin-inline: auto !important;
+    }
+
+    .request-clean-info {
+        width: 100% !important;
+        max-width: 760px !important;
+        min-height: auto !important;
+        padding: 22px !important;
+        align-content: start !important;
+    }
+
+    .request-clean-info h2 {
+        max-width: 620px !important;
+        font-size: clamp(1.85rem, 4vw, 2.65rem) !important;
+    }
+
+    .request-clean-info p {
+        max-width: 650px !important;
+    }
+
+    .request-clean-points {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+        margin-top: 6px !important;
+    }
+
+    .request-clean-points article {
+        width: 100% !important;
+        justify-content: flex-start !important;
+    }
+
+    .request-clean-form-card,
+    .request-clean-faq {
+        width: 100% !important;
+        max-width: 760px !important;
+    }
+}
 
 /* =========================
    FINAL CTA
@@ -1216,3 +1221,201 @@
         width: 100% !important;
     }
 }
+
+
+/* ==========================================================
+   HOME SERVICES — TABLET / MOBILE COMPACT FIX
+   ========================================================== */
+
+/* Desktop polish */
+.home-services .home-service-grid {
+    gap: 12px;
+}
+
+.home-services .square-service-card {
+    min-height: 270px;
+}
+
+.home-services .square-service-card .card-content {
+    padding: 18px;
+    gap: 8px;
+}
+
+.home-services .square-service-card h3 {
+    font-size: 1.08rem;
+}
+
+.home-services .square-service-card p {
+    font-size: 0.84rem;
+    line-height: 1.45;
+}
+
+.home-services .square-service-card .card-icon {
+    top: 14px;
+    right: 14px;
+    width: 34px;
+    height: 34px;
+}
+
+.home-services .square-service-card .card-icon i,
+.home-services .square-service-card .card-icon svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Tablet: 3 карточки в ряд */
+@media (min-width: 761px) and (max-width: 1120px) {
+    .home-services .section-head {
+        max-width: 920px;
+        margin-inline: auto;
+    }
+
+    .home-services .home-service-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        max-width: 920px;
+        margin-inline: auto;
+        gap: 12px;
+    }
+
+    .home-services .square-service-card {
+        min-height: 230px !important;
+        aspect-ratio: auto !important;
+        border-radius: 22px;
+    }
+
+    .home-services .square-service-card .card-content {
+        padding: 16px;
+    }
+
+    .home-services .square-service-card h3 {
+        font-size: 1rem;
+    }
+
+    .home-services .square-service-card p {
+        font-size: 0.78rem;
+        line-height: 1.4;
+    }
+}
+
+/* Mobile: 2 карточки в ряд, компактные */
+@media (max-width: 760px) {
+    .home-services {
+        padding-top: 28px;
+        padding-bottom: 34px;
+    }
+
+    .home-services .section-head {
+        gap: 14px;
+        margin-bottom: 18px;
+    }
+
+    .home-services .section-head h2 {
+        font-size: clamp(1.65rem, 8vw, 2.35rem);
+    }
+
+    .home-services .section-head .lead {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .home-services .home-service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 10px;
+    }
+
+    .home-services .square-service-card {
+        min-height: 190px !important;
+        aspect-ratio: auto !important;
+        border-radius: 20px;
+    }
+
+    .home-services .square-service-card .card-content {
+        padding: 13px;
+        gap: 6px;
+    }
+
+    .home-services .square-service-card h3 {
+        font-size: 0.9rem;
+        line-height: 1.15;
+    }
+
+    .home-services .square-service-card p {
+        font-size: 0.72rem;
+        line-height: 1.32;
+    }
+
+    .home-services .square-service-card .card-icon {
+        top: 11px;
+        right: 11px;
+        width: 30px;
+        height: 30px;
+    }
+
+    .home-services .square-service-card .card-icon i,
+    .home-services .square-service-card .card-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+}
+
+/* Very small mobile: still compact, but 1 column if screen is too narrow */
+@media (max-width: 430px) {
+    .home-services .home-service-grid {
+        grid-template-columns: 1fr !important;
+        width: min(100%, 330px);
+        margin-inline: auto;
+    }
+
+    .home-services .square-service-card {
+        min-height: 170px !important;
+    }
+}
+
+/* ==========================================================
+   HOME SERVICES — TABLET FIX 2x2
+   Put at the very bottom of home.css
+   ========================================================== */
+
+@media (min-width: 761px) and (max-width: 1120px) {
+    .home-services .home-service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        max-width: 760px !important;
+        margin-inline: auto !important;
+        gap: 12px !important;
+    }
+
+    .home-services .square-service-card {
+        min-height: 220px !important;
+        aspect-ratio: auto !important;
+        border-radius: 22px !important;
+    }
+
+    .home-services .square-service-card .card-content {
+        padding: 16px !important;
+        gap: 7px !important;
+    }
+
+    .home-services .square-service-card h3 {
+        font-size: 1rem !important;
+        line-height: 1.15 !important;
+    }
+
+    .home-services .square-service-card p {
+        font-size: 0.78rem !important;
+        line-height: 1.4 !important;
+    }
+
+    .home-services .square-service-card .card-icon {
+        width: 32px !important;
+        height: 32px !important;
+        top: 12px !important;
+        right: 12px !important;
+    }
+
+    .home-services .square-service-card .card-icon i,
+    .home-services .square-service-card .card-icon svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+}
+

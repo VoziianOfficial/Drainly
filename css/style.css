@@ -1788,3 +1788,61 @@ body.menu-open .site-header {
     cursor: not-allowed;
     opacity: 0.78;
 }
+
+/* =========================
+   FORM VALIDATION
+   ========================= */
+
+.form-field input.is-invalid,
+.form-field textarea.is-invalid,
+.form-field select.is-invalid {
+    border-color: #9f3a38 !important;
+    background: #fff7f6 !important;
+    box-shadow: 0 0 0 4px rgba(159, 58, 56, 0.1) !important;
+}
+
+.form-check input.is-invalid {
+    border-color: #9f3a38 !important;
+    background: #fff7f6 !important;
+    box-shadow: 0 0 0 4px rgba(159, 58, 56, 0.1) !important;
+}
+
+.field-error {
+    display: block;
+    color: #9f3a38;
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.form-status {
+    display: none;
+    border: 1px solid var(--color-border);
+    border-radius: 16px;
+    padding: 11px 13px;
+    font-size: 0.84rem;
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.form-status.is-visible {
+    display: block;
+}
+
+.form-status.is-success {
+    border-color: rgba(64, 112, 82, 0.24);
+    background: #f2f7f3;
+    color: #315f42;
+}
+
+.form-status.is-error {
+    border-color: rgba(159, 58, 56, 0.22);
+    background: #fff7f6;
+    color: #9f3a38;
+}
+
+.btn:disabled,
+.btn.is-submitted {
+    cursor: not-allowed;
+    opacity: 0.78;
+}

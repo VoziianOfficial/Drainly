@@ -645,36 +645,188 @@ function initRequestForms() {
         if (form.dataset.formReady === "true") return;
 
         form.dataset.formReady = "true";
+        form.setAttribute("novalidate", "true");
+
+        createFormStatus(form);
 
         form.addEventListener("submit", (event) => {
             event.preventDefault();
 
+            const isValid = validateRequestForm(form);
+
+            if (!isValid) {
+                showFormStatus(form, "error", "Please complete the highlighted fields before submitting.");
+                return;
+            }
+
             const submitButton = form.querySelector('button[type="submit"]');
+            const originalHTML = submitButton ? submitButton.innerHTML : "";
 
-            if (!submitButton) return;
+            if (submitButton) {
+                submitButton.disabled = true;
+                submitButton.classList.add("is-submitted");
+                submitButton.innerHTML = `
+                    Request sent
+                    <i data-lucide="check"></i>
+                `;
+            }
 
-            const originalHTML = submitButton.innerHTML;
-
-            submitButton.disabled = true;
-            submitButton.classList.add("is-submitted");
-            submitButton.innerHTML = `
-                Request noted
-                <i data-lucide="check"></i>
-            `;
+            showFormStatus(
+                form,
+                "success",
+                "Thank you. Your request details have been submitted successfully."
+            );
 
             refreshIcons();
 
             setTimeout(() => {
                 form.reset();
+                clearFormErrors(form);
 
-                submitButton.disabled = false;
-                submitButton.classList.remove("is-submitted");
-                submitButton.innerHTML = originalHTML;
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.classList.remove("is-submitted");
+                    submitButton.innerHTML = originalHTML;
+                }
 
                 refreshIcons();
-            }, 2200);
+            }, 2600);
+        });
+
+        form.addEventListener("input", (event) => {
+            const field = event.target.closest("input, textarea, select");
+            if (!field) return;
+
+            clearFieldError(field);
+        });
+
+        form.addEventListener("change", (event) => {
+            const field = event.target.closest("input, textarea, select");
+            if (!field) return;
+
+            clearFieldError(field);
         });
     });
+}
+
+function validateRequestForm(form) {
+    clearFormErrors(form);
+
+    let isValid = true;
+
+    const nameField = form.querySelector('[name="name"]');
+    const phoneField = form.querySelector('[name="phone"]');
+    const emailField = form.querySelector('[name="email"]');
+    const projectField = form.querySelector('[name="projectType"]');
+    const checkboxField = form.querySelector('[name="consent"], [name="platformNotice"]');
+
+    if (nameField && nameField.value.trim().length < 2) {
+        setFieldError(nameField, "Please enter your name.");
+        isValid = false;
+    }
+
+    if (phoneField && !isValidPhone(phoneField.value)) {
+        setFieldError(phoneField, "Please enter a valid phone number.");
+        isValid = false;
+    }
+
+    if (emailField && !isValidEmail(emailField.value)) {
+        setFieldError(emailField, "Please enter a valid email address.");
+        isValid = false;
+    }
+
+    if (projectField && !projectField.value.trim()) {
+        setFieldError(projectField, "Please select a request type.");
+        isValid = false;
+    }
+
+    if (checkboxField && !checkboxField.checked) {
+        setFieldError(checkboxField, "Please confirm that you understand the platform notice.");
+        isValid = false;
+    }
+
+    const firstInvalid = form.querySelector(".is-invalid");
+
+    if (firstInvalid) {
+        firstInvalid.focus({ preventScroll: true });
+        firstInvalid.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+    }
+
+    return isValid;
+}
+
+function isValidEmail(value) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value.trim());
+}
+
+function isValidPhone(value) {
+    const digits = value.replace(/\D/g, "");
+    return digits.length >= 7 && digits.length <= 15;
+}
+
+function setFieldError(field, message) {
+    const wrapper = field.closest(".form-field, .form-check") || field.parentElement;
+
+    field.classList.add("is-invalid");
+    field.setAttribute("aria-invalid", "true");
+
+    if (!wrapper) return;
+
+    let error = wrapper.querySelector(".field-error");
+
+    if (!error) {
+        error = document.createElement("span");
+        error.className = "field-error";
+        wrapper.appendChild(error);
+    }
+
+    error.textContent = message;
+}
+
+function clearFieldError(field) {
+    const wrapper = field.closest(".form-field, .form-check") || field.parentElement;
+
+    field.classList.remove("is-invalid");
+    field.removeAttribute("aria-invalid");
+
+    if (!wrapper) return;
+
+    const error = wrapper.querySelector(".field-error");
+    if (error) error.remove();
+}
+
+function clearFormErrors(form) {
+    form.querySelectorAll(".is-invalid").forEach((field) => {
+        field.classList.remove("is-invalid");
+        field.removeAttribute("aria-invalid");
+    });
+
+    form.querySelectorAll(".field-error").forEach((error) => {
+        error.remove();
+    });
+}
+
+function createFormStatus(form) {
+    if (form.querySelector(".form-status")) return;
+
+    const status = document.createElement("div");
+    status.className = "form-status";
+    status.setAttribute("role", "status");
+    status.setAttribute("aria-live", "polite");
+
+    form.appendChild(status);
+}
+
+function showFormStatus(form, type, message) {
+    const status = form.querySelector(".form-status");
+
+    if (!status) return;
+
+    status.className = `form-status is-visible is-${type}`;
+    status.textContent = message;
 }
 
 /* =========================
