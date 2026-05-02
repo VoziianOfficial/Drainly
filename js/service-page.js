@@ -24,7 +24,61 @@ document.addEventListener("DOMContentLoaded", () => {
     initServiceAos();
     initServiceFaqAgain();
     refreshServiceIcons();
+    renderRelatedServices(service);
 });
+
+
+function renderRelatedServices(currentService) {
+    const config = window.SITE_CONFIG;
+    const mount = document.querySelector("[data-related-services]");
+
+    if (!config || !mount || !currentService) return;
+
+    const relatedServices = (config.services || [])
+        .filter((service) => service.id !== currentService.id)
+        .slice(0, 3);
+
+    mount.innerHTML = relatedServices
+        .map((service) => {
+            return `
+                <a class="service-related-card" href="${escapeServiceHtml(service.url)}">
+                    <img src="${escapeServiceHtml(service.image || service.heroImage || "")}"
+                        alt="${escapeServiceHtml(service.title)} provider matching category">
+
+                    <span class="service-related-card-icon">
+                        <i data-lucide="${escapeServiceHtml(service.icon || "droplets")}"></i>
+                    </span>
+
+                    <div class="service-related-card-content">
+                        <span>${escapeServiceHtml(service.eyebrow || service.shortTitle || "Gutter request")}</span>
+
+                        <h3>${escapeServiceHtml(service.title)}</h3>
+
+                        <p>
+                            ${escapeServiceHtml(service.cardText || service.description || "")}
+                        </p>
+
+                        <strong class="service-related-card-link">
+                            View category
+                            <i data-lucide="arrow-right"></i>
+                        </strong>
+                    </div>
+                </a>
+            `;
+        })
+        .join("");
+
+    refreshServiceIcons();
+}
+
+function escapeServiceHtml(value) {
+    return String(value ?? "")
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+}
 
 /* =========================
    GET CURRENT SERVICE
