@@ -1,13 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — SERVICE PAGE SCRIPT
-   File: /js/service-page.js
 
-   This file reads the current service page filename and
-   replaces the template content with the correct service data
-   from js/config.js.
-   ========================================================== */
 
 document.addEventListener("DOMContentLoaded", () => {
     const service = getCurrentServiceData();
@@ -81,9 +74,7 @@ function escapeServiceHtml(value) {
         .replaceAll("'", "&#039;");
 }
 
-/* =========================
-   GET CURRENT SERVICE
-   ========================= */
+
 
 function getCurrentServiceData() {
     if (window.DRAINLY && typeof window.DRAINLY.getCurrentService === "function") {
@@ -98,9 +89,7 @@ function getCurrentServiceData() {
     return config.services.find((service) => service.url === fileName) || null;
 }
 
-/* =========================
-   RENDER SERVICE PAGE
-   ========================= */
+
 
 function renderServicePage(service) {
     setText("[data-service-title]", service.title);
@@ -124,9 +113,7 @@ function renderServicePage(service) {
     renderServiceFaq(service);
 }
 
-/* =========================
-   SMALL HELPERS
-   ========================= */
+
 
 function setText(selector, value) {
     document.querySelectorAll(selector).forEach((element) => {
@@ -143,9 +130,7 @@ function escapeHtml(value) {
         .replaceAll("'", "&#039;");
 }
 
-/* =========================
-   ICON / IMAGE
-   ========================= */
+
 
 function updateServiceIcon(service) {
     const icons = document.querySelectorAll("[data-service-icon]");
@@ -170,9 +155,7 @@ function updateServiceImage(service) {
     });
 }
 
-/* =========================
-   FACTORS
-   ========================= */
+
 
 function renderServiceFactors(service) {
     const list = document.querySelector("[data-service-factors]");
@@ -191,9 +174,7 @@ function renderServiceFactors(service) {
         .join("");
 }
 
-/* =========================
-   QUESTIONS
-   ========================= */
+
 
 function renderServiceQuestions(service) {
     const list = document.querySelector("[data-service-questions]");
@@ -212,9 +193,7 @@ function renderServiceQuestions(service) {
         .join("");
 }
 
-/* =========================
-   FAQ
-   ========================= */
+
 
 function renderServiceFaq(service) {
     const faqMount = document.querySelector("[data-service-faq]");
@@ -243,9 +222,7 @@ function renderServiceFaq(service) {
         .join("");
 }
 
-/* =========================
-   FAQ SCHEMA
-   ========================= */
+
 
 function injectServiceFaqSchema(service) {
     if (!Array.isArray(service.faq) || service.faq.length === 0) return;
@@ -276,9 +253,7 @@ function injectServiceFaqSchema(service) {
     document.body.appendChild(script);
 }
 
-/* =========================
-   AOS / FAQ / ICONS
-   ========================= */
+
 
 function initServiceAos() {
     if (window.AOS && typeof window.AOS.init === "function") {

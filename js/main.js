@@ -28,9 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshIcons();
 });
 
-/* =========================
-   HELPERS
-   ========================= */
+
 
 function getConfig() {
     return window.SITE_CONFIG || {};
@@ -79,9 +77,7 @@ function refreshIcons() {
     }
 }
 
-/* =========================
-   SKIP LINK
-   ========================= */
+
 
 function ensureSkipLink() {
     if (document.querySelector(".skip-link")) return;
@@ -94,9 +90,7 @@ function ensureSkipLink() {
     document.body.prepend(skipLink);
 }
 
-/* =========================
-   PAGE META
-   ========================= */
+
 
 function applyPageMeta() {
     const config = getConfig();
@@ -144,9 +138,7 @@ function updateMetaProperty(property, content) {
     meta.setAttribute("content", content);
 }
 
-/* =========================
-   HEADER
-   ========================= */
+
 
 function renderHeader() {
     const config = getConfig();
@@ -259,9 +251,7 @@ function renderHeader() {
     `;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
+
 
 function renderFooter() {
     const config = getConfig();
@@ -374,9 +364,7 @@ function renderFooter() {
     `;
 }
 
-/* =========================
-   CONFIG VALUE INJECTION
-   ========================= */
+
 
 function injectConfigValues() {
     const config = getConfig();
@@ -416,9 +404,7 @@ function injectConfigValues() {
     });
 }
 
-/* =========================
-   MOBILE MENU
-   ========================= */
+
 
 function initMobileMenu() {
     const openButton = document.querySelector("[data-menu-open]");
@@ -471,9 +457,7 @@ function initMobileMenu() {
     });
 }
 
-/* =========================
-   ACTIVE LINKS
-   ========================= */
+
 
 function setActiveLinks() {
     const currentPage = getCurrentFileName();
@@ -499,9 +483,7 @@ function setActiveLinks() {
     });
 }
 
-/* =========================
-   CONSENT BANNER
-   ========================= */
+
 
 function initConsentBanner() {
     const config = getConfig();
@@ -567,9 +549,7 @@ function initConsentBanner() {
     });
 }
 
-/* =========================
-   FAQ ACCORDION
-   ========================= */
+
 
 function initFaqAccordions() {
     const accordions = document.querySelectorAll("[data-accordion]");
@@ -619,9 +599,7 @@ function initFaqAccordions() {
     });
 }
 
-/* =========================
-   SERVICE HELPERS
-   ========================= */
+
 
 function getCurrentService() {
     const config = getConfig();
@@ -641,9 +619,6 @@ function getServiceById(id) {
 }
 
 
-/* =========================
-   REQUEST FORMS
-   ========================= */
 
 function initRequestForms() {
     const forms = document.querySelectorAll(".contact-form, .mini-request-form");
@@ -836,9 +811,7 @@ function showFormStatus(form, type, message) {
     status.textContent = message;
 }
 
-/* =========================
-   STATIC BRAND REPLACEMENT
-   ========================= */
+
 
 function replaceStaticCompanyName() {
     const config = getConfig();
@@ -895,9 +868,7 @@ function replaceStaticCompanyName() {
     });
 }
 
-/* =========================
-   MAP EMBEDS FROM CONFIG ADDRESS
-   ========================= */
+
 
 function updateMapEmbeds() {
     const config = getConfig();
@@ -920,9 +891,7 @@ function updateMapEmbeds() {
     });
 }
 
-/* =========================
-   PUBLIC HELPERS FOR PAGE FILES
-   ========================= */
+
 
 window.DRAINLY = {
     getConfig,

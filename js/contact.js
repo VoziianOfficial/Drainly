@@ -1,9 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — CONTACT PAGE SCRIPT
-   File: /js/contact.js
-   ========================================================== */
+
 
 document.addEventListener("DOMContentLoaded", () => {
     initContactAos();

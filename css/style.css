@@ -1802,3 +1802,76 @@ body.menu-open .site-header {
     cursor: not-allowed;
     opacity: 0.78;
 }
+
+
+
+/* ==========================================================
+   BUTTON ICON CENTER FIX — TABLET / MOBILE
+   ========================================================== */
+
+/* Общая фиксация иконок внутри всех кнопок */
+.btn i,
+.btn svg {
+    display: block !important;
+    width: 18px !important;
+    height: 18px !important;
+    flex: 0 0 18px !important;
+    margin: 0 !important;
+}
+
+/* Чтобы текст и иконка всегда были ровно по центру */
+.btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* Header phone button on tablet/mobile */
+@media (max-width: 860px) {
+    .header-phone {
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        font-size: 0 !important;
+        border-radius: 50% !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+    }
+
+    .header-phone span {
+        display: none !important;
+    }
+
+    .header-phone i,
+    .header-phone svg {
+        width: 18px !important;
+        height: 18px !important;
+        flex: 0 0 18px !important;
+        margin: 0 !important;
+    }
+}
+
+/* Small mobile */
+@media (max-width: 420px) {
+
+    .header-phone,
+    .header-actions .header-phone {
+        width: 42px !important;
+        min-width: 42px !important;
+        height: 42px !important;
+        min-height: 42px !important;
+        padding: 0 !important;
+        gap: 0 !important;
+    }
+
+    .header-phone i,
+    .header-phone svg {
+        width: 17px !important;
+        height: 17px !important;
+        flex: 0 0 17px !important;
+    }
+}

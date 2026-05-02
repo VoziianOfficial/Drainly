@@ -1,13 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — GLOBAL CONFIG
-   This file controls shared company data, navigation,
-   footer content, legal notices, services, and page meta.
 
-   Change values here once — they update across the website
-   through js/main.js and page-specific scripts.
-   ========================================================== */
 
 const companyName = "Drainly";
 const defaultCompanyName = "Drainly";

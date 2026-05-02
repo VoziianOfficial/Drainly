@@ -1,9 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — SERVICES PAGE SCRIPT
-   File: /js/services.js
-   ========================================================== */
+
 
 document.addEventListener("DOMContentLoaded", () => {
     initServicesAos();

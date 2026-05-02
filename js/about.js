@@ -1,9 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — ABOUT PAGE SCRIPT
-   File: /js/about.js
-   ========================================================== */
+
 
 document.addEventListener("DOMContentLoaded", () => {
     initAboutAos();

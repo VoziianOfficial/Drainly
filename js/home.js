@@ -1,9 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — HOME PAGE SCRIPT
-   File: /js/home.js
-   ========================================================== */
+
 
 document.addEventListener("DOMContentLoaded", () => {
     initHomeAos();

@@ -1,9 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   DRAINLY — LEGAL PAGES SCRIPT
-   File: /js/legal.js
-   ========================================================== */
+
 
 document.addEventListener("DOMContentLoaded", () => {
     refreshLegalIcons();
