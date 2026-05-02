@@ -23,8 +23,9 @@ document.addEventListener("DOMContentLoaded", () => {
     injectServiceFaqSchema(service);
     initServiceAos();
     initServiceFaqAgain();
-    refreshServiceIcons();
     renderRelatedServices(service);
+    refreshServiceIcons();
+    
 });
 
 
@@ -155,12 +156,18 @@ function updateServiceIcon(service) {
 }
 
 function updateServiceImage(service) {
-    const image = document.querySelector("[data-service-hero-image]");
+    const heroImages = document.querySelectorAll("[data-service-hero-image]");
+    const overviewImages = document.querySelectorAll("[data-service-overview-image]");
 
-    if (!image) return;
+    heroImages.forEach((image) => {
+        image.setAttribute("src", service.heroImage || service.image || "");
+        image.setAttribute("alt", `${service.title} provider matching request`);
+    });
 
-    image.setAttribute("src", service.heroImage || service.image || "");
-    image.setAttribute("alt", `${service.title} provider matching request`);
+    overviewImages.forEach((image) => {
+        image.setAttribute("src", service.heroImage || service.image || "");
+        image.setAttribute("alt", `${service.title} service overview visual`);
+    });
 }
 
 /* =========================
