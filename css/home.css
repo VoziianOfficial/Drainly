@@ -931,8 +931,12 @@
     inset: 0;
     z-index: -1;
     background:
-        linear-gradient(90deg, rgba(23, 23, 26, 0.96), rgba(23, 23, 26, 0.78)),
-        radial-gradient(circle at 82% 20%, rgba(255, 255, 255, 0.12), transparent 26%);
+        linear-gradient(90deg,
+            rgba(23, 23, 26, 0.56),
+            rgba(23, 23, 26, 0.30)),
+        radial-gradient(circle at 82% 20%,
+            rgba(255, 255, 255, 0.10),
+            transparent 26%);
 }
 
 .home-final-cta-content {
