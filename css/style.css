@@ -610,10 +610,7 @@ main {
     top: 0;
 }
 
-.menu-toggle-lines::after {
-    bottom: 0;
-    width: 13px;
-}
+
 
 body.menu-open .menu-toggle-lines::before {
     top: 5px;
