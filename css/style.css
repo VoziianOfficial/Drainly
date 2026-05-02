@@ -1917,10 +1917,6 @@ body.menu-open .site-header {
 
 
 
-/* ==========================================================
-           HIDE SCROLLBARS — MOBILE MENU ONLY
-           ========================================================== */
-
 .site-menu,
 .site-menu-panel,
 .menu-panel-body {
@@ -1938,15 +1934,11 @@ body.menu-open .site-header {
     display: none;
 }
 
-/* чтобы на iPhone/Android скролл оставался плавным */
+
 .menu-panel-body {
     -webkit-overflow-scrolling: touch;
 }
 
-
-/* ==========================================================
-                   BURGER ICON CENTER FIX — TABLET / MOBILE
-                   ========================================================== */
 
 @media (max-width: 860px) {
     .menu-toggle {
@@ -2015,6 +2007,89 @@ body.menu-open .site-header {
 
     .menu-toggle-lines::before,
     .menu-toggle-lines::after {
+        width: 17px !important;
+    }
+}
+
+
+
+@media (max-width: 860px) {
+    .menu-toggle {
+        position: relative !important;
+        display: block !important;
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        min-height: 44px !important;
+        padding: 0 !important;
+        border-radius: 50% !important;
+        line-height: 1 !important;
+    }
+
+    .menu-toggle-lines {
+        position: absolute !important;
+        top: 50% !important;
+        left: 50% !important;
+        width: 18px !important;
+        height: 14px !important;
+        margin: 0 !important;
+        transform: translate(-50%, -50%) !important;
+    }
+
+    .menu-toggle-lines::before,
+    .menu-toggle-lines::after {
+        content: "" !important;
+        position: absolute !important;
+        left: 50% !important;
+        right: auto !important;
+        width: 18px !important;
+        height: 2px !important;
+        border-radius: 999px !important;
+        background: currentColor !important;
+        transform: translateX(-50%) !important;
+        transform-origin: center !important;
+    }
+
+    .menu-toggle-lines::before {
+        top: 2px !important;
+    }
+
+    .menu-toggle-lines::after {
+        bottom: 2px !important;
+    }
+
+    body.menu-open .menu-toggle-lines::before {
+        top: 50% !important;
+        transform: translate(-50%, -50%) rotate(45deg) !important;
+    }
+
+    body.menu-open .menu-toggle-lines::after {
+        bottom: auto !important;
+        top: 50% !important;
+        width: 18px !important;
+        transform: translate(-50%, -50%) rotate(-45deg) !important;
+    }
+}
+
+@media (max-width: 420px) {
+    .menu-toggle {
+        width: 42px !important;
+        min-width: 42px !important;
+        height: 42px !important;
+        min-height: 42px !important;
+    }
+
+    .menu-toggle-lines {
+        width: 17px !important;
+        height: 13px !important;
+    }
+
+    .menu-toggle-lines::before,
+    .menu-toggle-lines::after {
+        width: 17px !important;
+    }
+
+    body.menu-open .menu-toggle-lines::after {
         width: 17px !important;
     }
 }
