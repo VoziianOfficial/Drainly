@@ -719,12 +719,12 @@
     z-index: -1;
     background:
         linear-gradient(90deg,
-            rgba(23, 23, 26, 0.96) 0%,
-            rgba(23, 23, 26, 0.84) 44%,
-            rgba(23, 23, 26, 0.58) 100%),
+            rgba(23, 23, 26, 0.62) 0%,
+            rgba(23, 23, 26, 0.42) 44%,
+            rgba(23, 23, 26, 0.18) 100%),
         linear-gradient(180deg,
-            rgba(23, 23, 26, 0.1),
-            rgba(23, 23, 26, 0.55));
+            rgba(23, 23, 26, 0.03),
+            rgba(23, 23, 26, 0.22));
 }
 
 .about-hero .container-wide {
@@ -761,12 +761,12 @@
     z-index: -1;
     background:
         linear-gradient(90deg,
-            rgba(23, 23, 26, 0.94) 0%,
-            rgba(23, 23, 26, 0.82) 52%,
-            rgba(23, 23, 26, 0.62) 100%),
+            rgba(23, 23, 26, 0.48) 0%,
+            rgba(23, 23, 26, 0.30) 52%,
+            rgba(23, 23, 26, 0.10) 100%),
         linear-gradient(180deg,
-            rgba(23, 23, 26, 0.08),
-            rgba(23, 23, 26, 0.55));
+            rgba(23, 23, 26, 0.01),
+            rgba(23, 23, 26, 0.14));
 }
 
 .about-story-card h2,

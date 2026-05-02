@@ -508,12 +508,12 @@
     z-index: 1;
     background:
         linear-gradient(90deg,
-            rgba(23, 23, 26, 0.96) 0%,
-            rgba(23, 23, 26, 0.86) 42%,
-            rgba(23, 23, 26, 0.62) 100%),
+            rgba(23, 23, 26, 0.46) 0%,
+            rgba(23, 23, 26, 0.28) 42%,
+            rgba(23, 23, 26, 0.08) 100%),
         linear-gradient(180deg,
-            rgba(23, 23, 26, 0.1),
-            rgba(23, 23, 26, 0.55));
+            rgba(23, 23, 26, 0.01),
+            rgba(23, 23, 26, 0.12));
 }
 
 .services-hero .container-wide {
@@ -660,13 +660,20 @@
         opacity: 0.5;
     }
 
-    .services-hero::after {
-        background:
-            linear-gradient(180deg,
-                rgba(23, 23, 26, 0.94) 0%,
-                rgba(23, 23, 26, 0.82) 54%,
-                rgba(23, 23, 26, 0.68) 100%);
-    }
+   .services-hero::after {
+       content: "";
+       position: absolute;
+       inset: 0;
+       z-index: 1;
+       background:
+           linear-gradient(90deg,
+               rgba(23, 23, 26, 0.46) 0%,
+               rgba(23, 23, 26, 0.28) 42%,
+               rgba(23, 23, 26, 0.08) 100%),
+           linear-gradient(180deg,
+               rgba(23, 23, 26, 0.01),
+               rgba(23, 23, 26, 0.12));
+   }
 
     .services-hero-panel {
         padding: 18px;
@@ -715,12 +722,12 @@
     z-index: -1;
     background:
         linear-gradient(90deg,
-            rgba(23, 23, 26, 0.94) 0%,
-            rgba(23, 23, 26, 0.82) 52%,
-            rgba(23, 23, 26, 0.58) 100%),
+            rgba(23, 23, 26, 0.58) 0%,
+            rgba(23, 23, 26, 0.38) 52%,
+            rgba(23, 23, 26, 0.14) 100%),
         linear-gradient(180deg,
-            rgba(23, 23, 26, 0.08),
-            rgba(23, 23, 26, 0.52));
+            rgba(23, 23, 26, 0.02),
+            rgba(23, 23, 26, 0.20));
 }
 
 .services-compare-content h2,
@@ -967,3 +974,54 @@
         width: 100% !important;
     }
 }
+
+/* ==========================================================
+   SERVICES COMPARE — ICON/NUMBER IN RIGHT CORNER + 2 COLUMNS
+   ========================================================== */
+
+.services-compare-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 14px !important;
+}
+
+.services-compare-grid article {
+    position: relative !important;
+    min-height: 190px !important;
+    padding: 22px 20px 20px !important;
+    border-radius: 24px !important;
+}
+
+/* number badge in top-right corner */
+.services-compare-grid article>span {
+    position: absolute !important;
+    top: 16px !important;
+    right: 16px !important;
+    display: grid !important;
+    place-items: center !important;
+    width: 38px !important;
+    height: 38px !important;
+    border-radius: 14px !important;
+    background: var(--color-accent-soft) !important;
+    color: var(--color-accent-hover) !important;
+    font-size: 0.76rem !important;
+    font-weight: 800 !important;
+}
+
+/* space so title does not touch the badge */
+.services-compare-grid article h3 {
+    padding-right: 52px !important;
+    margin-top: 6px !important;
+}
+
+/* Tablet and mobile — keep as it was / 1 column */
+@media (max-width: 900px) {
+    .services-compare-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .services-compare-grid article {
+        min-height: auto !important;
+    }
+}
+
