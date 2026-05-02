@@ -331,34 +331,34 @@
 }
 
 .service-cta-panel {
-    position: sticky;
-    top: calc(var(--header-height) + 18px);
+    position: relative;
     display: grid;
     gap: 18px;
+    overflow: hidden;
     border-radius: var(--radius-xl);
-    background:
-        linear-gradient(135deg, var(--color-dark), #2a2928);
+background:
+        linear-gradient(90deg,
+            rgba(23, 23, 26, 0.78) 0%,
+            rgba(23, 23, 26, 0.62) 55%,
+            rgba(23, 23, 26, 0.40) 100%),
+        linear-gradient(180deg,
+            rgba(23, 23, 26, 0.16),
+            rgba(23, 23, 26, 0.48)),
+        url("../assets/images/service-pages/service-cta-bg.jpg") center / cover no-repeat;
     color: #fff;
     padding: clamp(24px, 4vw, 38px);
     box-shadow: var(--shadow-dark);
-    overflow: hidden;
 }
 
-.service-cta-panel::before {
-    content: "";
-    position: absolute;
-    right: -110px;
-    bottom: -160px;
-    width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.06);
-    pointer-events: none;
+.service-cta-panel::before,
+.service-cta-panel::after {
+    content: none !important;
+    display: none !important;
 }
 
 .service-cta-panel>* {
     position: relative;
-    z-index: 2;
+    z-index: 1;
 }
 
 .service-cta-panel h2,
@@ -373,12 +373,12 @@
 
 .service-cta-panel p {
     max-width: 540px;
-    color: rgba(255, 255, 255, 0.68);
+    color: rgba(255, 255, 255, 0.78);
 }
 
 .service-cta-panel .section-kicker {
-    border-color: var(--color-border-dark);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.10);
     color: #fff;
 }
 
@@ -388,9 +388,24 @@
 }
 
 .service-cta-panel .btn-ghost {
-    border-color: rgba(255, 255, 255, 0.22);
-    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.24);
+    background: rgba(255, 255, 255, 0.10);
     color: #fff;
+}
+
+.service-cta-panel .btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.16);
+}
+
+.service-faq-card {
+    display: grid;
+    gap: 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+    padding: clamp(20px, 3vw, 30px);
 }
 
 .service-cta-panel .btn-ghost:hover {
@@ -1267,3 +1282,5 @@
         font-size: 0.8rem;
     }
 }
+
+
