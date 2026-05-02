@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     initMobileMenu();
     initConsentBanner();
     initFaqAccordions();
+    initRequestForms();
     setActiveLinks();
     refreshIcons();
 });
@@ -629,6 +630,50 @@ function getServiceById(id) {
 
     return (config.services || []).find((service) => {
         return service.id === id;
+    });
+}
+
+
+/* =========================
+   REQUEST FORMS
+   ========================= */
+
+function initRequestForms() {
+    const forms = document.querySelectorAll(".contact-form, .mini-request-form");
+
+    forms.forEach((form) => {
+        if (form.dataset.formReady === "true") return;
+
+        form.dataset.formReady = "true";
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            const submitButton = form.querySelector('button[type="submit"]');
+
+            if (!submitButton) return;
+
+            const originalHTML = submitButton.innerHTML;
+
+            submitButton.disabled = true;
+            submitButton.classList.add("is-submitted");
+            submitButton.innerHTML = `
+                Request noted
+                <i data-lucide="check"></i>
+            `;
+
+            refreshIcons();
+
+            setTimeout(() => {
+                form.reset();
+
+                submitButton.disabled = false;
+                submitButton.classList.remove("is-submitted");
+                submitButton.innerHTML = originalHTML;
+
+                refreshIcons();
+            }, 2200);
+        });
     });
 }
 

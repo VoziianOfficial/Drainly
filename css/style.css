@@ -1783,3 +1783,8 @@ body.menu-open .site-header {
     z-index: 900;
 }
 
+.btn:disabled,
+.btn.is-submitted {
+    cursor: not-allowed;
+    opacity: 0.78;
+}

@@ -7,7 +7,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
     initContactAos();
-    initContactForm();
     refreshContactIcons();
 });
 
@@ -28,42 +27,7 @@ function initContactAos() {
     document.body.classList.add("no-aos");
 }
 
-function initContactForm() {
-    const forms = document.querySelectorAll(".contact-form, .mini-request-form");
 
-    forms.forEach((form) => {
-        form.addEventListener("submit", (event) => {
-            event.preventDefault();
-
-            const button = form.querySelector('button[type="submit"]');
-            const originalText = button ? button.innerHTML : "";
-
-            if (button) {
-                button.innerHTML = `Request noted <i data-lucide="check"></i>`;
-                button.disabled = true;
-                button.classList.add("is-submitted");
-            }
-
-            if (window.DRAINLY && typeof window.DRAINLY.refreshIcons === "function") {
-                window.DRAINLY.refreshIcons();
-            }
-
-            setTimeout(() => {
-                if (button) {
-                    button.innerHTML = originalText;
-                    button.disabled = false;
-                    button.classList.remove("is-submitted");
-
-                    if (window.DRAINLY && typeof window.DRAINLY.refreshIcons === "function") {
-                        window.DRAINLY.refreshIcons();
-                    }
-                }
-
-                form.reset();
-            }, 2200);
-        });
-    });
-}
 
 function refreshContactIcons() {
     if (window.DRAINLY && typeof window.DRAINLY.refreshIcons === "function") {
