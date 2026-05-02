@@ -1805,11 +1805,9 @@ body.menu-open .site-header {
 
 
 
-/* ==========================================================
-   BUTTON ICON CENTER FIX — TABLET / MOBILE
-   ========================================================== */
 
-/* Общая фиксация иконок внутри всех кнопок */
+
+
 .btn i,
 .btn svg {
     display: block !important;
@@ -1819,14 +1817,14 @@ body.menu-open .site-header {
     margin: 0 !important;
 }
 
-/* Чтобы текст и иконка всегда были ровно по центру */
+
 .btn {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
 }
 
-/* Header phone button on tablet/mobile */
+
 @media (max-width: 860px) {
     .header-phone {
         width: 44px !important;
@@ -1855,7 +1853,7 @@ body.menu-open .site-header {
     }
 }
 
-/* Small mobile */
+
 @media (max-width: 420px) {
 
     .header-phone,
@@ -1876,9 +1874,7 @@ body.menu-open .site-header {
     }
 }
 
-        /* ==========================================================
-       MOBILE MENU SCROLL FIX
-       ========================================================== */
+  
     
         .site-menu {
             height: 100dvh;
@@ -1906,7 +1902,7 @@ body.menu-open .site-header {
             flex-shrink: 0;
         }
     
-        /* Mobile safe area */
+   
         @media (max-width: 640px) {
             .site-menu-panel {
                 height: 100dvh !important;
