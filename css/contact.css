@@ -1,11 +1,4 @@
-/* ==========================================================
-   DRAINLY — CONTACT PAGE FINAL REDESIGN
-   File: /css/contact.css
-   ========================================================== */
 
-/* =========================
-   HERO
-   ========================= */
 
 .dn-contact-hero {
     position: relative;
@@ -134,9 +127,7 @@
     line-height: 1.55;
 }
 
-/* =========================
-   REQUEST SECTION
-   ========================= */
+
 
 .dn-contact-request {
     padding-top: clamp(34px, 5vw, 64px);
@@ -242,7 +233,7 @@
     line-height: 1.3;
 }
 
-/* FORM */
+
 
 .dn-contact-form-card {
     display: grid;
@@ -369,9 +360,7 @@
     text-align: right;
 }
 
-/* =========================
-   MAP SECTION
-   ========================= */
+
 
 .dn-contact-map-section {
     padding-top: clamp(34px, 5vw, 64px);
@@ -555,9 +544,8 @@
     line-height: 1.3;
 }
 
-/* =========================
-   FAQ SECTION
-   ========================= */
+
+
 
 .dn-contact-faq {
     padding-top: clamp(34px, 5vw, 64px);
@@ -632,9 +620,7 @@
     padding: 0 20px 19px;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+
 
 @media (max-width: 1120px) {
     .dn-contact-hero {
@@ -763,10 +749,7 @@
     }
 }
 
-/* ==========================================================
-   CONTACT PAGE — WIDE + COMPACT FINAL FIX
-   Put this at the VERY BOTTOM of contact.css
-   ========================================================== */
+
 
 /* общая идея: секции шире, высота ниже */
 .contact-page .container-wide {
@@ -782,9 +765,7 @@
     padding-bottom: clamp(22px, 3vw, 38px) !important;
 }
 
-/* =========================
-   HERO — WIDE + NOT TALL
-   ========================= */
+
 
 .dn-contact-hero {
     min-height: auto !important;
@@ -825,9 +806,7 @@
     padding: 24px !important;
 }
 
-/* =========================
-   FORM + INFO — WIDER, LOWER
-   ========================= */
+
 
 .dn-contact-request-grid {
     width: min(100%, 1380px) !important;
@@ -878,7 +857,7 @@
     border-radius: 16px !important;
 }
 
-/* форма компактнее */
+
 .dn-contact-form-card {
     padding: 18px !important;
     align-content: start !important;
@@ -936,9 +915,7 @@
     font-size: 0.68rem !important;
 }
 
-/* =========================
-   MAP SECTION — WIDE MAP, LOWER HEIGHT
-   ========================= */
+
 
 .dn-contact-map-shell {
     width: min(100%, 1380px) !important;
@@ -984,9 +961,7 @@
     height: 360px !important;
 }
 
-/* =========================
-   FAQ — WIDE, COMPACT, CLEAN
-   ========================= */
+
 
 .dn-contact-faq-shell {
     width: min(100%, 1380px) !important;
@@ -1039,9 +1014,7 @@
     line-height: 1.5 !important;
 }
 
-/* =========================
-   TABLET — still wide, not too narrow
-   ========================= */
+
 
 @media (max-width: 1120px) {
     .contact-page .container-wide {
@@ -1083,9 +1056,7 @@
     }
 }
 
-/* =========================
-   MOBILE — compact but readable
-   ========================= */
+
 
 @media (max-width: 720px) {
     .contact-page .container-wide {
@@ -1168,10 +1139,6 @@
 }
 
 
-/* ==========================================================
-   MAP SECTION — PHOTO STRIP UNDER MAP
-   Put at the very bottom of contact.css
-   ========================================================== */
 
 .dn-contact-map-side {
     display: grid !important;
@@ -1223,7 +1190,7 @@
     line-height: 1.25;
 }
 
-/* Tablet */
+
 @media (max-width: 1120px) {
     .dn-contact-map-side {
         grid-template-rows: 330px 110px !important;
@@ -1240,7 +1207,6 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 720px) {
     .dn-contact-map-side {
         grid-template-rows: 300px 96px !important;

@@ -5,14 +5,7 @@
 @import url("./service-page.css");
 @import url("./legal.css");
 
-/* ==========================================================
-   DRAINLY — GLOBAL DESIGN SYSTEM
-   Main file: /css/style.css
-   ========================================================== */
 
-/* =========================
-   CSS VARIABLES
-   ========================= */
 
 :root {
     --color-bg: #F5F5F3;
@@ -55,9 +48,7 @@
     --transition-slow: 420ms ease;
 }
 
-/* =========================
-   RESET / BASE
-   ========================= */
+
 
 *,
 *::before,
@@ -142,9 +133,7 @@ h6 {
     color: #fff;
 }
 
-/* =========================
-   ACCESSIBILITY
-   ========================= */
+
 
 .skip-link {
     position: fixed;
@@ -182,9 +171,7 @@ h6 {
     }
 }
 
-/* =========================
-   TYPOGRAPHY
-   ========================= */
+
 
 h1,
 h2,
@@ -257,9 +244,7 @@ p {
     color: var(--color-accent);
 }
 
-/* =========================
-   LAYOUT HELPERS
-   ========================= */
+
 .page-shell {
     position: relative;
     width: 100%;
@@ -351,9 +336,7 @@ main {
     gap: 16px;
 }
 
-/* =========================
-   BUTTONS
-   ========================= */
+
 
 .btn {
     position: relative;
@@ -460,9 +443,7 @@ main {
     transform: translateX(3px);
 }
 
-/* =========================
-   HEADER
-   ========================= */
+
 
 .site-header {
     position: fixed;
@@ -645,9 +626,7 @@ body.menu-open .menu-toggle-lines::after {
     transform: rotate(-45deg);
 }
 
-/* =========================
-   FULLSCREEN MENU
-   ========================= */
+
 
 .site-menu {
     position: fixed;
@@ -860,9 +839,7 @@ body.menu-open .site-menu-panel {
     color: var(--color-accent);
 }
 
-/* =========================
-   CARDS / COMMON UI
-   ========================= */
+
 
 .surface-card {
     border: 1px solid var(--color-border);
@@ -1023,9 +1000,7 @@ body.menu-open .site-menu-panel {
     line-height: 1.55;
 }
 
-/* =========================
-   FORMS
-   ========================= */
+
 
 .form-card {
     border: 1px solid var(--color-border);
@@ -1150,9 +1125,7 @@ body.menu-open .site-menu-panel {
     line-height: 1.5;
 }
 
-/* =========================
-   ACCORDION / FAQ
-   ========================= */
+
 
 .faq-list {
     display: grid;
@@ -1213,9 +1186,7 @@ body.menu-open .site-menu-panel {
     font-size: 0.95rem;
 }
 
-/* =========================
-   CTA BLOCKS
-   ========================= */
+
 
 .cta-panel {
     position: relative;
@@ -1257,9 +1228,6 @@ body.menu-open .site-menu-panel {
     margin-top: 22px;
 }
 
-/* =========================
-   FOOTER
-   ========================= */
 
 .site-footer {
     background: var(--color-dark);
@@ -1400,9 +1368,7 @@ body.menu-open .site-menu-panel {
     color: #fff;
 }
 
-/* =========================
-   CONSENT BANNER
-   ========================= */
+
 
 .consent-banner {
     position: fixed;
@@ -1470,9 +1436,7 @@ body.menu-open .site-menu-panel {
     gap: 8px;
 }
 
-/* =========================
-   UTILITY CLASSES
-   ========================= */
+
 
 .hide {
     display: none !important;
@@ -1565,9 +1529,7 @@ body.menu-open .site-menu-panel {
     height: 16px;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+
 
 @media (max-width: 1100px) {
     :root {
@@ -1761,11 +1723,7 @@ body.menu-open .site-menu-panel {
     }
 }
 
-/* =========================
-   AOS SAFETY FALLBACK
-   If AOS CSS loads but AOS JS does not initialize,
-   content must stay visible.
-   ========================= */
+
 
 body:not(.aos-ready) [data-aos] {
     opacity: 1 !important;
@@ -1789,9 +1747,7 @@ body.menu-open .site-header {
     opacity: 0.78;
 }
 
-/* =========================
-   FORM VALIDATION
-   ========================= */
+
 
 .form-field input.is-invalid,
 .form-field textarea.is-invalid,

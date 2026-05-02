@@ -197,9 +197,7 @@
        line-height: 1.22;
    }
 
-   /* =========================
-   HERO RESPONSIVE
-   ========================= */
+
 
    @media (max-width: 1040px) {
        .home-hero {
@@ -263,9 +261,7 @@
 
    
 
-/* =========================
-   HOME SERVICES
-   ========================= */
+
 
 .home-services {
     position: relative;
@@ -277,9 +273,7 @@
     gap: 16px;
 }
 
-/* =========================
-   PROCESS — COMPACT VERSION
-   ========================= */
+
 
 .home-process-compact {
     padding-top: clamp(28px, 4vw, 46px);
@@ -419,7 +413,7 @@
     line-height: 1.45;
 }
 
-/* Tablet */
+
 @media (max-width: 1120px) {
     .home-process-compact .home-process-panel {
         grid-template-columns: 1fr 1fr;
@@ -439,7 +433,7 @@
     }
 }
 
-/* Mobile */
+
 @media (max-width: 760px) {
     .home-process-compact .home-process-panel {
         grid-template-columns: 1fr;
@@ -481,10 +475,7 @@
     }
 }
 
-/* ==========================================================
-   REQUEST + FAQ — FULL REDESIGN
-   New unique classes, old home-request styles will not affect it.
-   ========================================================== */
+
 
 .request-clean {
     padding-top: clamp(30px, 4vw, 50px);
@@ -500,7 +491,6 @@
     margin-inline: auto;
 }
 
-/* LEFT INFO */
 
 .request-clean-info {
     display: grid;
@@ -558,7 +548,7 @@
     font-weight: 700;
 }
 
-/* FORM */
+
 
 .request-clean-form-card {
     min-width: 0;
@@ -663,7 +653,7 @@
     text-align: right;
 }
 
-/* FAQ */
+
 
 .request-clean-faq {
     display: grid;
@@ -765,7 +755,7 @@
     transform: translateX(3px);
 }
 
-/* TABLET */
+
 
 @media (max-width: 1120px) {
     .request-clean-shell {
@@ -784,7 +774,7 @@
     }
 }
 
-/* MOBILE */
+
 
 @media (max-width: 760px) {
     .request-clean {
@@ -831,7 +821,7 @@
     }
 }
 
-/* SMALL MOBILE */
+
 
 @media (max-width: 420px) {
     .request-clean-submit .btn {
@@ -843,9 +833,7 @@
     }
 }
 
-/* =========================
-   REQUEST CLEAN — TABLET NARROW INFO
-   ========================= */
+
 
 @media (min-width: 761px) and (max-width: 1120px) {
     .request-clean-shell {
@@ -890,9 +878,7 @@
     }
 }
 
-/* =========================
-   FINAL CTA
-   ========================= */
+
 
 .home-final-cta {
     position: relative;
@@ -1045,10 +1031,7 @@
 }
 
 
-/* ==========================================================
-   FORCE COMPACT HERO FIX
-   Put this at the very bottom of home.css
-   ========================================================== */
+
 
 .home-page .home-hero.home-hero-compact {
     min-height: auto !important;
@@ -1159,7 +1142,7 @@
     font-size: 0.7rem !important;
 }
 
-/* Tablet */
+
 @media (max-width: 1040px) {
     .home-page .home-hero.home-hero-compact {
         padding: 20px 0 !important;
@@ -1176,7 +1159,6 @@
     }
 }
 
-/* Mobile */
 @media (max-width: 700px) {
     .home-page .home-hero.home-hero-compact {
         padding: 16px 0 !important;
@@ -1227,11 +1209,9 @@
 }
 
 
-/* ==========================================================
-   HOME SERVICES — TABLET / MOBILE COMPACT FIX
-   ========================================================== */
 
-/* Desktop polish */
+
+
 .home-services .home-service-grid {
     gap: 12px;
 }
@@ -1267,7 +1247,6 @@
     height: 16px;
 }
 
-/* Tablet: 3 карточки в ряд */
 @media (min-width: 761px) and (max-width: 1120px) {
     .home-services .section-head {
         max-width: 920px;
@@ -1301,7 +1280,6 @@
     }
 }
 
-/* Mobile: 2 карточки в ряд, компактные */
 @media (max-width: 760px) {
     .home-services {
         padding-top: 28px;
@@ -1362,7 +1340,7 @@
     }
 }
 
-/* Very small mobile: still compact, but 1 column if screen is too narrow */
+
 @media (max-width: 430px) {
     .home-services .home-service-grid {
         grid-template-columns: 1fr !important;
@@ -1375,10 +1353,7 @@
     }
 }
 
-/* ==========================================================
-   HOME SERVICES — TABLET FIX 2x2
-   Put at the very bottom of home.css
-   ========================================================== */
+
 
 @media (min-width: 761px) and (max-width: 1120px) {
     .home-services .home-service-grid {
@@ -1423,11 +1398,9 @@
     }
 }
 
-/* ==========================================================
-   REQUEST FORM — TEXTAREA + CHECKBOX ERROR FIX
-   ========================================================== */
 
-/* Desktop: textarea больше и удобнее */
+
+
 @media (min-width: 1121px) {
     .request-clean .request-clean-message textarea {
         min-height: 108px !important;
@@ -1436,7 +1409,7 @@
     }
 }
 
-/* Tablet: чуть больше, но не огромная */
+
 @media (min-width: 761px) and (max-width: 1120px) {
     .request-clean .request-clean-message textarea {
         min-height: 92px !important;
@@ -1445,7 +1418,7 @@
     }
 }
 
-/* Mobile: компактно */
+
 @media (max-width: 760px) {
     .request-clean .request-clean-message textarea {
         min-height: 78px !important;
@@ -1454,7 +1427,7 @@
     }
 }
 
-/* Checkbox line */
+
 .request-clean-check {
     display: grid !important;
     grid-template-columns: 17px minmax(0, 1fr) !important;
@@ -1474,7 +1447,7 @@
     grid-row: 1 !important;
 }
 
-/* Checkbox validation text appears below, aligned with label text */
+
 .request-clean-check .field-error {
     grid-column: 2 !important;
     grid-row: 2 !important;
@@ -1485,14 +1458,12 @@
     line-height: 1.35 !important;
 }
 
-/* Make checkbox error not push awkwardly */
+
 .request-clean-check input.is-invalid {
     margin-bottom: 0 !important;
 }
 
-/* ==========================================================
-   REQUEST FORM — TABLET NARROW COMPACT
-   ========================================================== */
+
 
 @media (min-width: 761px) and (max-width: 1120px) {
     .request-clean-form-card {

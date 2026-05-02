@@ -1,15 +1,4 @@
-/* ==========================================================
-   DRAINLY — LEGAL PAGES
-   File: /css/legal.css
-   Used by:
-   - privacy-policy.html
-   - cookie-policy.html
-   - terms-of-service.html
-   ========================================================== */
 
-/* =========================
-   LEGAL HERO
-   ========================= */
 
 .legal-hero {
     position: relative;
@@ -83,9 +72,7 @@
     line-height: 1.55;
 }
 
-/* =========================
-   LEGAL LAYOUT
-   ========================= */
+
 
 .legal-content-section {
     position: relative;
@@ -180,9 +167,7 @@
     line-height: 1.55;
 }
 
-/* =========================
-   LEGAL CONTENT
-   ========================= */
+
 
 .legal-content-card {
     display: grid;
@@ -235,9 +220,7 @@
     color: var(--color-heading);
 }
 
-/* =========================
-   LEGAL MINI GRID
-   ========================= */
+
 
 .legal-mini-grid {
     display: grid;
@@ -273,9 +256,7 @@
     line-height: 1.55;
 }
 
-/* =========================
-   DISCLAIMER BOX
-   ========================= */
+
 
 .legal-disclaimer-box {
     display: grid;
@@ -303,9 +284,6 @@
     line-height: 1.7;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
 
 @media (max-width: 980px) {
 

@@ -1,16 +1,4 @@
-/* ==========================================================
-   DRAINLY — SERVICE DETAIL PAGES
-   File: /css/service-page.css
-   Used by:
-   - gutter-installation.html
-   - gutter-replacement.html
-   - gutter-repair.html
-   - gutter-cleaning.html
-   ========================================================== */
 
-/* =========================
-   SERVICE HERO
-   ========================= */
 
 .service-hero {
     position: relative;
@@ -138,9 +126,7 @@
     line-height: 1.25;
 }
 
-/* =========================
-   SERVICE OVERVIEW
-   ========================= */
+
 
 .service-overview {
     position: relative;
@@ -211,9 +197,7 @@
     line-height: 1.55;
 }
 
-/* =========================
-   FACTORS / QUESTIONS
-   ========================= */
+
 
 .service-details {
     position: relative;
@@ -315,9 +299,7 @@
     color: rgba(255, 255, 255, 0.78);
 }
 
-/* =========================
-   FAQ / CTA
-   ========================= */
+
 
 .service-faq-section {
     position: relative;
@@ -423,9 +405,7 @@ background:
     padding: clamp(20px, 3vw, 30px);
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+
 
 @media (max-width: 1120px) {
 
@@ -525,9 +505,7 @@ background:
 }
 
 
-/* ==========================================================
-   SERVICE HERO — FULL BACKGROUND PHOTO STYLE
-   ========================================================== */
+
 
 .service-hero-bg-style {
     position: relative;
@@ -705,12 +683,11 @@ background:
     line-height: 1.5;
 }
 
-/* Hide old media card if old HTML remains somewhere */
+
 .service-hero-bg-style .service-hero-media {
     display: none !important;
 }
 
-/* TABLET */
 
 @media (max-width: 1040px) {
     .service-hero-bg-style .container-wide {
@@ -736,7 +713,7 @@ background:
     }
 }
 
-/* MOBILE */
+
 
 @media (max-width: 640px) {
     .service-hero-bg-style {
@@ -783,9 +760,7 @@ background:
     }
 }
 
-/* ==========================================================
-   SERVICE OVERVIEW — CONTEXT BOARD REDESIGN
-   ========================================================== */
+
 
 .service-context-board {
     padding-top: clamp(28px, 4vw, 48px);
@@ -805,7 +780,7 @@ background:
     margin-inline: auto;
 }
 
-/* LEFT COPY */
+
 
 .service-context-copy {
     display: grid;
@@ -860,7 +835,6 @@ background:
     line-height: 1.45;
 }
 
-/* CENTER CARDS */
 
 .service-context-cards {
     display: grid;
@@ -927,7 +901,7 @@ background:
     line-height: 1.42;
 }
 
-/* RIGHT PHOTO */
+
 
 .service-context-photo {
     position: relative;
@@ -984,7 +958,7 @@ background:
     line-height: 1.25;
 }
 
-/* TABLET */
+
 
 @media (max-width: 1120px) {
     .service-context-board .container-wide {
@@ -1019,7 +993,7 @@ background:
     }
 }
 
-/* MOBILE */
+
 
 @media (max-width: 720px) {
     .service-context-board {
@@ -1067,10 +1041,6 @@ background:
 }
 
 
-
-/* ==========================================================
-   RELATED SERVICES — OTHER 3 SERVICE CARDS
-   ========================================================== */
 
 .service-related {
     position: relative;
@@ -1234,7 +1204,7 @@ background:
     transform: translateX(3px);
 }
 
-/* TABLET */
+
 @media (max-width: 980px) {
     .service-related .container-wide {
         width: min(100% - 32px, 960px);
@@ -1254,7 +1224,7 @@ background:
     }
 }
 
-/* MOBILE */
+
 @media (max-width: 640px) {
     .service-related {
         padding-top: 24px;

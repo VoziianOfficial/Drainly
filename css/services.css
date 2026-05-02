@@ -1,11 +1,4 @@
-/* ==========================================================
-   DRAINLY — SERVICES PAGE
-   File: /css/services.css
-   ========================================================== */
 
-/* =========================
-   SERVICES HERO
-   ========================= */
 
 .services-hero {
     position: relative;
@@ -108,9 +101,7 @@
     line-height: 1.25;
 }
 
-/* =========================
-   SERVICES CATALOG
-   ========================= */
+
 
 .services-catalog {
     position: relative;
@@ -229,9 +220,7 @@
     color: #fff;
 }
 
-/* =========================
-   COMPARISON
-   ========================= */
+
 
 .services-compare {
     position: relative;
@@ -347,9 +336,7 @@
     line-height: 1.55;
 }
 
-/* =========================
-   FAQ
-   ========================= */
+
 
 .services-faq {
     position: relative;
@@ -384,9 +371,7 @@
     gap: 10px;
 }
 
-/* =========================
-   RESPONSIVE
-   ========================= */
+
 
 @media (max-width: 1100px) {
 
@@ -478,9 +463,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICES HERO — BACKGROUND PHOTO STYLE
-   ========================================================== */
+
 
 .services-hero {
     position: relative;
@@ -632,7 +615,7 @@
     line-height: 1.28;
 }
 
-/* Tablet */
+
 @media (max-width: 980px) {
     .services-hero-panel {
         grid-template-columns: 1fr;
@@ -648,7 +631,7 @@
     }
 }
 
-/* Mobile */
+
 @media (max-width: 640px) {
     .services-hero {
         padding-top: 26px;
@@ -693,9 +676,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICES COMPARE CONTENT — BACKGROUND PHOTO
-   ========================================================== */
+
 
 .services-compare-content {
     position: relative;
@@ -762,10 +743,7 @@
     background: rgba(255, 255, 255, 0.16);
 }
 
-/* ==========================================================
-   SERVICES HERO — SAME SIZE AS HOME HERO COMPACT
-   Put at the very bottom of services.css
-   ========================================================== */
+
 
 .services-hero {
     min-height: auto !important;
@@ -803,7 +781,7 @@
     backdrop-filter: blur(10px) !important;
 }
 
-/* Content */
+
 
 .services-hero-content {
     display: grid !important;
@@ -841,7 +819,7 @@
     color: #fff !important;
 }
 
-/* Buttons */
+
 
 .services-hero-actions {
     display: flex !important;
@@ -867,7 +845,6 @@
     background: rgba(255, 255, 255, 0.16) !important;
 }
 
-/* Side cards */
 
 .services-hero-side {
     display: grid !important;
@@ -909,13 +886,13 @@
     line-height: 1.18 !important;
 }
 
-/* Background photo opacity */
+
 
 .services-hero::before {
     opacity: 0.62 !important;
 }
 
-/* Tablet */
+
 
 @media (max-width: 1040px) {
     .services-hero {
@@ -939,7 +916,7 @@
     }
 }
 
-/* Mobile */
+
 
 @media (max-width: 700px) {
     .services-hero {
@@ -975,9 +952,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICES COMPARE — ICON/NUMBER IN RIGHT CORNER + 2 COLUMNS
-   ========================================================== */
+
 
 .services-compare-grid {
     display: grid !important;
@@ -992,7 +967,7 @@
     border-radius: 24px !important;
 }
 
-/* number badge in top-right corner */
+
 .services-compare-grid article>span {
     position: absolute !important;
     top: 16px !important;
@@ -1008,13 +983,13 @@
     font-weight: 800 !important;
 }
 
-/* space so title does not touch the badge */
+
 .services-compare-grid article h3 {
     padding-right: 52px !important;
     margin-top: 6px !important;
 }
 
-/* Tablet and mobile — keep as it was / 1 column */
+
 @media (max-width: 900px) {
     .services-compare-grid {
         grid-template-columns: 1fr !important;
