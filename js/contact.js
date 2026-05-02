@@ -11,23 +11,20 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function initContactAos() {
-    if (window.AOS && typeof window.AOS.init === "function") {
-        document.body.classList.add("aos-ready");
-
-        window.AOS.init({
-            duration: 700,
-            easing: "ease-out-cubic",
-            once: true,
-            offset: 70
-        });
-
+    if (!window.AOS || typeof window.AOS.init !== "function") {
+        document.body.classList.add("no-aos");
         return;
     }
 
-    document.body.classList.add("no-aos");
+    document.body.classList.add("aos-ready");
+
+    window.AOS.init({
+        duration: 700,
+        easing: "ease-out-cubic",
+        once: true,
+        offset: 70
+    });
 }
-
-
 
 function refreshContactIcons() {
     if (window.DRAINLY && typeof window.DRAINLY.refreshIcons === "function") {

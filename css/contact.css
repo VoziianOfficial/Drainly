@@ -1,621 +1,317 @@
 /* ==========================================================
-   DRAINLY — CONTACT PAGE
+   DRAINLY — CONTACT PAGE FINAL REDESIGN
    File: /css/contact.css
    ========================================================== */
 
 /* =========================
-   CONTACT HERO
+   HERO
    ========================= */
 
-.contact-hero {
+.dn-contact-hero {
     position: relative;
+    min-height: calc(100svh - var(--header-height));
+    display: grid;
+    align-items: center;
     overflow: hidden;
-    padding-top: clamp(38px, 5vw, 70px);
-}
-
-.contact-hero::before {
-    content: "";
-    position: absolute;
-    top: -190px;
-    right: -160px;
-    width: 430px;
-    height: 430px;
-    border-radius: 50%;
-    background: rgba(106, 102, 95, 0.08);
-    pointer-events: none;
-}
-
-.contact-hero-panel {
-    position: relative;
-    z-index: 2;
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.42fr);
-    gap: 18px;
-    align-items: stretch;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    background:
-        linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(228, 226, 222, 0.48));
-    box-shadow: var(--shadow-soft);
-    padding: clamp(22px, 4vw, 42px);
-}
-
-.contact-hero-content {
-    display: grid;
-    align-content: center;
-    gap: 18px;
-}
-
-.contact-hero-content h1 {
-    max-width: 820px;
-}
-
-.contact-hero-actions {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 4px;
-}
-
-.contact-hero-card {
-    display: grid;
-    align-content: center;
-    gap: 12px;
-    border: 1px solid var(--color-border);
-    border-radius: 28px;
-    background: #fff;
-    padding: clamp(20px, 3vw, 28px);
-}
-
-.contact-hero-card i,
-.contact-hero-card svg {
-    width: 28px;
-    height: 28px;
-    color: var(--color-accent);
-}
-
-.contact-hero-card h2 {
-    font-size: clamp(1.35rem, 2vw, 1.8rem);
-}
-
-.contact-hero-card p {
-    color: var(--color-muted);
-    font-size: 0.94rem;
-}
-
-/* =========================
-   CONTACT MAIN
-   ========================= */
-
-.contact-main {
-    position: relative;
-}
-
-.contact-main-layout {
-    display: grid;
-    grid-template-columns: minmax(330px, 0.72fr) minmax(0, 1fr);
-    gap: 18px;
-    align-items: start;
-}
-
-.contact-info-panel {
-    position: sticky;
-    top: calc(var(--header-height) + 18px);
-    display: grid;
-    gap: 18px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
     background: var(--color-dark);
     color: #fff;
-    padding: clamp(22px, 3vw, 32px);
-    box-shadow: var(--shadow-dark);
-}
-
-.contact-info-panel h2,
-.contact-info-panel p {
-    color: #fff;
-}
-
-.contact-info-panel .lead {
-    color: rgba(255, 255, 255, 0.68);
-}
-
-.contact-info-panel .section-kicker {
-    border-color: var(--color-border-dark);
-    background: rgba(255, 255, 255, 0.08);
-    color: #fff;
-}
-
-.contact-info-panel .section-kicker i,
-.contact-info-panel .section-kicker svg {
-    color: #fff;
-}
-
-.contact-methods {
-    display: grid;
-    gap: 10px;
-}
-
-.contact-methods a,
-.contact-methods>div {
-    display: flex;
-    align-items: flex-start;
-    gap: 13px;
-    border: 1px solid var(--color-border-dark);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.07);
-    padding: 14px;
-    transition:
-        border-color var(--transition-base),
-        background var(--transition-base);
-}
-
-.contact-methods a:hover {
-    border-color: rgba(255, 255, 255, 0.36);
-    background: rgba(255, 255, 255, 0.12);
-}
-
-.contact-methods i,
-.contact-methods svg {
-    width: 20px;
-    height: 20px;
-    flex: 0 0 auto;
-    margin-top: 2px;
-    color: #fff;
-}
-
-.contact-methods div div {
-    display: grid;
-    gap: 2px;
-}
-
-.contact-methods span {
-    color: rgba(255, 255, 255, 0.58);
-    font-size: 0.74rem;
-    font-weight: 800;
-    letter-spacing: 0.07em;
-    text-transform: uppercase;
-}
-
-.contact-methods strong {
-    color: #fff;
-    font-size: 0.95rem;
-    line-height: 1.35;
-}
-
-.contact-small-note {
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-    border: 1px solid var(--color-border-dark);
-    border-radius: 20px;
-    background: rgba(255, 255, 255, 0.07);
-    padding: 14px;
-}
-
-.contact-small-note i,
-.contact-small-note svg {
-    width: 18px;
-    height: 18px;
-    flex: 0 0 auto;
-    margin-top: 3px;
-    color: #fff;
-}
-
-.contact-small-note p {
-    color: rgba(255, 255, 255, 0.66);
-    font-size: 0.88rem;
-    line-height: 1.55;
-}
-
-/* =========================
-   FORM
-   ========================= */
-
-.contact-form-card {
-    display: grid;
-    gap: 16px;
-}
-
-.contact-form-card h2 {
-    max-width: 560px;
-    font-size: clamp(1.7rem, 3vw, 2.7rem);
-}
-
-.contact-form {
-    display: grid;
-    gap: 14px;
-}
-
-/* =========================
-   AREA / MAP
-   ========================= */
-
-.contact-area {
-    position: relative;
-}
-
-.contact-area-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(330px, 0.58fr);
-    gap: 18px;
-    align-items: stretch;
-}
-
-.contact-area-details {
-    display: grid;
-    align-content: center;
-    gap: 18px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    background: #fff;
-    padding: clamp(22px, 3vw, 32px);
-    box-shadow: var(--shadow-card);
-}
-
-.contact-area-details h2 {
-    max-width: 540px;
-    font-size: clamp(1.75rem, 3vw, 2.8rem);
-}
-
-.contact-area-list {
-    display: grid;
-    gap: 10px;
-}
-
-.contact-area-list article {
-    display: grid;
-    grid-template-columns: 42px minmax(0, 1fr);
-    gap: 13px;
-    align-items: start;
-    border: 1px solid var(--color-border);
-    border-radius: 20px;
-    background: var(--color-bg);
-    padding: 14px;
-    transition:
-        border-color var(--transition-base),
-        background var(--transition-base);
-}
-
-.contact-area-list article:hover {
-    border-color: var(--color-accent);
-    background: #fff;
-}
-
-.contact-area-list i,
-.contact-area-list svg {
-    width: 42px;
-    height: 42px;
-    border-radius: 15px;
-    background: var(--color-accent-soft);
-    color: var(--color-accent-hover);
-    padding: 10px;
-}
-
-.contact-area-list h3 {
-    margin-bottom: 3px;
-    font-size: 1.04rem;
-}
-
-.contact-area-list p {
-    color: var(--color-muted);
-    font-size: 0.91rem;
-    line-height: 1.5;
-}
-
-/* =========================
-   CONTACT FAQ
-   ========================= */
-
-.contact-faq {
-    position: relative;
-}
-
-.contact-faq-layout {
-    display: grid;
-    grid-template-columns: minmax(320px, 0.64fr) minmax(0, 1fr);
-    gap: 18px;
-    align-items: start;
-}
-
-.contact-faq-intro {
-    position: sticky;
-    top: calc(var(--header-height) + 18px);
-    display: grid;
-    gap: 18px;
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-xl);
-    background: #fff;
-    padding: clamp(22px, 3vw, 32px);
-    box-shadow: var(--shadow-card);
-}
-
-.contact-faq-intro h2 {
-    font-size: clamp(1.8rem, 3vw, 3rem);
-}
-
-.contact-faq-intro .btn {
-    width: fit-content;
-}
-
-/* =========================
-   RESPONSIVE
-   ========================= */
-
-@media (max-width: 1100px) {
-
-    .contact-hero-panel,
-    .contact-main-layout,
-    .contact-area-layout,
-    .contact-faq-layout {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-info-panel,
-    .contact-faq-intro {
-        position: static;
-    }
-}
-
-@media (max-width: 760px) {
-
-    .contact-hero-panel,
-    .contact-info-panel,
-    .contact-area-details,
-    .contact-faq-intro {
-        border-radius: 28px;
-    }
-
-    .contact-hero-actions {
-        width: 100%;
-    }
-
-    .contact-hero-actions .btn {
-        flex: 1;
-    }
-
-    .contact-area-list article {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-faq-intro .btn {
-        width: 100%;
-    }
-}
-
-@media (max-width: 480px) {
-    .contact-hero-actions {
-        flex-direction: column;
-    }
-
-    .contact-hero-actions .btn {
-        width: 100%;
-    }
-
-    .contact-methods a,
-    .contact-methods>div,
-    .contact-small-note {
-        border-radius: 18px;
-    }
-}
-
-/* ==========================================================
-   CONTACT SIMPLE — PHOTO CARD + COMPACT FORM
-   ========================================================== */
-
-.contact-simple {
-    padding-top: clamp(30px, 4vw, 48px);
-    padding-bottom: clamp(30px, 4vw, 48px);
-}
-
-.contact-simple-shell {
-    display: grid;
-    grid-template-columns: minmax(300px, 0.72fr) minmax(0, 0.86fr);
-    gap: 14px;
-    align-items: stretch;
-    width: min(100%, 980px);
-    margin-inline: auto;
-}
-
-/* PHOTO INFO CARD */
-
-.contact-simple-card {
-    position: relative;
-    display: grid;
-    align-content: space-between;
-    gap: 18px;
-    min-height: 430px;
-    overflow: hidden;
     isolation: isolate;
-    border: 1px solid var(--color-border);
-    border-radius: 28px;
-    background: var(--color-dark);
-    color: #fff;
-    padding: clamp(18px, 3vw, 26px);
-    box-shadow: 0 16px 42px rgba(23, 23, 26, 0.12);
+    padding: clamp(22px, 4vw, 44px) 0;
 }
 
-.contact-simple-card::before {
+.dn-contact-hero::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -2;
-    background:
-        url("../assets/images/contact/contact-card-bg.jpg") center / cover no-repeat;
-    opacity: 0.56;
+    background: url("../assets/images/contact/contact-hero.jpg") center / cover no-repeat;
+    opacity: 0.72;
 }
 
-.contact-simple-card::after {
+.dn-contact-hero::after {
     content: "";
     position: absolute;
     inset: 0;
     z-index: -1;
     background:
-        linear-gradient(180deg, rgba(23, 23, 26, 0.18), rgba(23, 23, 26, 0.92)),
-        linear-gradient(90deg, rgba(23, 23, 26, 0.72), rgba(23, 23, 26, 0.28));
+        linear-gradient(90deg, rgba(23, 23, 26, 0.96) 0%, rgba(23, 23, 26, 0.78) 46%, rgba(23, 23, 26, 0.42) 100%),
+        linear-gradient(180deg, rgba(23, 23, 26, 0.08), rgba(23, 23, 26, 0.58));
 }
 
-.contact-simple-card .section-kicker {
+.dn-contact-hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(290px, 0.38fr);
+    gap: 18px;
+    align-items: stretch;
+    width: min(100%, 1120px);
+    margin-inline: auto;
+}
+
+.dn-contact-hero-content {
+    display: grid;
+    align-content: end;
+    gap: 18px;
+    min-height: min(620px, calc(100svh - var(--header-height) - 60px));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 34px;
+    background: rgba(255, 255, 255, 0.06);
+    padding: clamp(24px, 5vw, 46px);
+    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.24);
+    backdrop-filter: blur(10px);
+}
+
+.dn-contact-hero-content h1 {
+    max-width: 790px;
+    color: #fff;
+    font-size: clamp(2.65rem, 6.2vw, 5.9rem);
+    line-height: 0.96;
+    letter-spacing: -0.07em;
+}
+
+.dn-contact-hero-content .lead {
+    max-width: 660px;
+    color: rgba(255, 255, 255, 0.74);
+}
+
+.dn-contact-hero .section-kicker {
     margin-bottom: 0;
     border-color: rgba(255, 255, 255, 0.18);
     background: rgba(255, 255, 255, 0.1);
     color: #fff;
 }
 
-.contact-simple-card .section-kicker i,
-.contact-simple-card .section-kicker svg {
+.dn-contact-hero .section-kicker i,
+.dn-contact-hero .section-kicker svg {
     color: #fff;
 }
 
-.contact-simple-card-content {
+.dn-contact-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.dn-contact-hero-panel {
     display: grid;
-    gap: 12px;
-}
-
-.contact-simple-card-content h2 {
-    max-width: 420px;
+    align-content: end;
+    gap: 16px;
+    min-height: min(620px, calc(100svh - var(--header-height) - 60px));
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 34px;
+    background: rgba(255, 255, 255, 0.08);
     color: #fff;
-    font-size: clamp(1.9rem, 3.6vw, 3.25rem);
-    line-height: 1;
-    letter-spacing: -0.06em;
+    padding: 22px;
+    backdrop-filter: blur(10px);
 }
 
-.contact-simple-card-content p {
-    max-width: 430px;
+.dn-contact-hero-panel>div {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.dn-contact-hero-panel i,
+.dn-contact-hero-panel svg {
+    width: 20px;
+    height: 20px;
+    color: #fff;
+}
+
+.dn-contact-hero-panel p {
     color: rgba(255, 255, 255, 0.72);
     font-size: 0.92rem;
     line-height: 1.55;
 }
 
-.contact-simple-methods {
+/* =========================
+   REQUEST SECTION
+   ========================= */
+
+.dn-contact-request {
+    padding-top: clamp(34px, 5vw, 64px);
+    padding-bottom: clamp(34px, 5vw, 64px);
+}
+
+.dn-contact-request-grid {
     display: grid;
-    gap: 9px;
+    grid-template-columns: minmax(0, 0.78fr) minmax(360px, 0.56fr);
+    gap: 24px;
+    align-items: stretch;
+    width: min(100%, 1120px);
+    margin-inline: auto;
 }
 
-.contact-simple-methods a,
-.contact-simple-methods div {
-    display: flex;
-    align-items: flex-start;
-    gap: 9px;
-    color: rgba(255, 255, 255, 0.82);
-    font-size: 0.84rem;
-    font-weight: 750;
-    line-height: 1.35;
+/* INFO CARD */
+
+.dn-contact-info-card {
+    display: grid;
+    grid-template-columns: minmax(210px, 0.55fr) minmax(0, 1fr);
+    min-height: 430px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #fff;
+    box-shadow: var(--shadow-card);
 }
 
-.contact-simple-methods i,
-.contact-simple-methods svg {
-    width: 16px;
-    height: 16px;
-    flex: 0 0 auto;
-    margin-top: 2px;
-    color: #fff;
+.dn-contact-info-photo {
+    min-height: 100%;
+    background:
+        linear-gradient(180deg, rgba(23, 23, 26, 0.06), rgba(23, 23, 26, 0.32)),
+        url("../assets/images/contact/contact-form.jpg") center / cover no-repeat;
 }
 
-.contact-simple-note {
-    display: flex;
-    align-items: flex-start;
+.dn-contact-info-content {
+    display: grid;
+    align-content: center;
+    gap: 16px;
+    padding: clamp(22px, 3vw, 32px);
+}
+
+.dn-contact-info-content h2 {
+    max-width: 460px;
+    font-size: clamp(1.85rem, 3.4vw, 3.2rem);
+}
+
+.dn-contact-info-content p {
+    max-width: 460px;
+    color: var(--color-muted);
+    font-size: 0.95rem;
+    line-height: 1.58;
+}
+
+.dn-contact-methods {
+    display: grid;
     gap: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.dn-contact-methods a,
+.dn-contact-methods div {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 11px;
+    align-items: center;
+    border: 1px solid var(--color-border);
     border-radius: 18px;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 12px;
-    backdrop-filter: blur(12px);
+    background: var(--color-bg);
+    padding: 11px;
+    transition:
+        border-color var(--transition-base),
+        background var(--transition-base);
 }
 
-.contact-simple-note i,
-.contact-simple-note svg {
-    width: 17px;
-    height: 17px;
-    flex: 0 0 auto;
-    margin-top: 2px;
-    color: #fff;
+.dn-contact-methods a:hover {
+    border-color: var(--color-accent);
+    background: #fff;
 }
 
-.contact-simple-note p {
-    color: rgba(255, 255, 255, 0.72);
-    font-size: 0.78rem;
-    line-height: 1.4;
+.dn-contact-methods i,
+.dn-contact-methods svg {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+    background: var(--color-accent-soft);
+    color: var(--color-accent-hover);
+    padding: 9px;
 }
 
-/* FORM CARD */
+.dn-contact-methods small {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.68rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
 
-.contact-simple-form-card {
+.dn-contact-methods strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: 0.86rem;
+    line-height: 1.3;
+}
+
+/* FORM */
+
+.dn-contact-form-card {
     display: grid;
     align-content: start;
-    gap: 13px;
+    gap: 14px;
     min-height: 430px;
-    min-width: 0;
     border: 1px solid var(--color-border);
-    border-radius: 28px;
+    border-radius: var(--radius-xl);
     background: #fff;
-    padding: clamp(18px, 2.6vw, 24px);
-    box-shadow: 0 14px 34px rgba(23, 23, 26, 0.07);
+    padding: clamp(18px, 2.4vw, 24px);
+    box-shadow: var(--shadow-card);
 }
 
-.contact-simple-form-head {
+.dn-contact-form-head {
     display: grid;
     gap: 7px;
-    padding-bottom: 10px;
+    padding-bottom: 12px;
     border-bottom: 1px solid var(--color-border);
 }
 
-.contact-simple-form-head .section-kicker {
+.dn-contact-form-head .section-kicker {
     margin-bottom: 0;
 }
 
-.contact-simple-form-head h2 {
-    font-size: clamp(1.55rem, 3vw, 2.35rem);
-    line-height: 1;
+.dn-contact-form-head h2 {
+    font-size: clamp(1.55rem, 2.8vw, 2.35rem);
 }
 
-.contact-simple-form-head p {
-    max-width: 430px;
+.dn-contact-form-head p {
     color: var(--color-muted);
     font-size: 0.86rem;
     line-height: 1.45;
 }
 
-.contact-simple-form {
+.dn-contact-form {
     display: grid;
-    gap: 11px;
+    gap: 12px;
 }
 
-.contact-simple-fields {
+.dn-contact-form-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 8px;
+    gap: 9px;
 }
 
-.contact-simple-full {
+.dn-contact-full {
     grid-column: 1 / -1;
 }
 
-.contact-simple-fields .form-field {
+.dn-contact-form-grid .form-field {
     gap: 5px;
 }
 
-.contact-simple-fields .form-field label {
+.dn-contact-form-grid .form-field label {
     font-size: 0.72rem;
 }
 
-.contact-simple-fields .form-field input,
-.contact-simple-fields .form-field select,
-.contact-simple-fields .form-field textarea {
-    min-height: 37px;
-    border-radius: 11px;
+.dn-contact-form-grid .form-field input,
+.dn-contact-form-grid .form-field select,
+.dn-contact-form-grid .form-field textarea {
+    min-height: 38px;
+    border-radius: 12px;
     padding: 7px 10px;
     font-size: 0.84rem;
 }
 
-.contact-simple-fields .form-field textarea {
-    min-height: 78px;
-    max-height: 78px;
+.dn-contact-form-grid .form-field textarea {
+    min-height: 82px;
+    max-height: 82px;
     resize: none;
     line-height: 1.42;
 }
 
-.contact-simple-check {
+.dn-contact-check {
     display: grid !important;
     grid-template-columns: 17px minmax(0, 1fr) !important;
     column-gap: 10px !important;
@@ -626,7 +322,7 @@
     line-height: 1.34;
 }
 
-.contact-simple-check input[type="checkbox"] {
+.dn-contact-check input[type="checkbox"] {
     grid-column: 1;
     grid-row: 1;
     width: 17px;
@@ -635,208 +331,932 @@
     margin-top: 2px;
 }
 
-.contact-simple-check>span:not(.field-error) {
+.dn-contact-check>span:not(.field-error) {
     grid-column: 2;
     grid-row: 1;
 }
 
-.contact-simple-check .field-error {
+.dn-contact-check .field-error {
     grid-column: 2;
     grid-row: 2;
     font-size: 0.72rem;
 }
 
-.contact-simple-submit {
+.dn-contact-form-submit {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 10px;
 }
 
-.contact-simple-submit .btn {
+.dn-contact-form-submit .btn {
     width: auto;
-    min-height: 39px;
-    padding: 8px 13px;
-    font-size: 0.82rem;
+    min-height: 40px;
+    padding: 9px 14px;
+    font-size: 0.84rem;
 }
 
-.contact-simple-submit p {
+.dn-contact-form-submit p {
     max-width: 170px;
     color: var(--color-muted);
-    font-size: 0.7rem;
-    line-height: 1.3;
+    font-size: 0.72rem;
+    line-height: 1.35;
     text-align: right;
 }
 
-/* TABLET — same layout, just narrower */
+/* =========================
+   MAP SECTION
+   ========================= */
 
-@media (min-width: 761px) and (max-width: 1100px) {
-    .contact-simple-shell {
-        grid-template-columns: minmax(280px, 0.75fr) minmax(0, 0.95fr);
-        width: min(100%, 860px);
-        gap: 12px;
+.dn-contact-map-section {
+    padding-top: clamp(34px, 5vw, 64px);
+    padding-bottom: clamp(34px, 5vw, 64px);
+}
+
+.dn-contact-map-shell {
+    display: grid;
+    grid-template-columns: minmax(330px, 0.52fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    width: min(100%, 1180px);
+    margin-inline: auto;
+}
+
+.dn-contact-map-copy {
+    display: grid;
+    align-content: center;
+    gap: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background:
+        linear-gradient(135deg, #fff, rgba(228, 226, 222, 0.54));
+    padding: clamp(22px, 3vw, 32px);
+    box-shadow: var(--shadow-card);
+}
+
+.dn-contact-map-copy h2 {
+    max-width: 560px;
+    font-size: clamp(1.85rem, 3.2vw, 3.2rem);
+}
+
+.dn-contact-map-copy p {
+    max-width: 560px;
+    color: var(--color-muted);
+    font-size: 0.94rem;
+    line-height: 1.58;
+}
+
+.dn-contact-address {
+    display: grid;
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 12px;
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: 22px;
+    background: #fff;
+    padding: 14px;
+}
+
+.dn-contact-address i,
+.dn-contact-address svg {
+    width: 44px;
+    height: 44px;
+    border-radius: 16px;
+    background: var(--color-accent-soft);
+    color: var(--color-accent-hover);
+    padding: 11px;
+}
+
+.dn-contact-address span {
+    display: block;
+    color: var(--color-muted);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.dn-contact-address strong {
+    display: block;
+    color: var(--color-heading);
+    font-size: 0.96rem;
+    line-height: 1.35;
+}
+
+.dn-contact-map-points {
+    display: grid;
+    gap: 10px;
+}
+
+.dn-contact-map-points article {
+    display: grid;
+    grid-template-columns: 38px minmax(0, 1fr);
+    gap: 12px;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.76);
+    padding: 13px;
+}
+
+.dn-contact-map-points i,
+.dn-contact-map-points svg {
+    width: 38px;
+    height: 38px;
+    border-radius: 14px;
+    background: var(--color-accent-soft);
+    color: var(--color-accent-hover);
+    padding: 9px;
+}
+
+.dn-contact-map-points h3 {
+    margin-bottom: 2px;
+    font-size: 0.98rem;
+}
+
+.dn-contact-map-points p {
+    color: var(--color-muted);
+    font-size: 0.83rem;
+    line-height: 1.44;
+}
+
+.dn-contact-map-card {
+    position: relative;
+    min-height: 440px;
+    overflow: hidden;
+    isolation: isolate;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: var(--color-dark);
+    box-shadow: var(--shadow-card);
+}
+
+.dn-contact-map-card iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    filter: grayscale(1) contrast(1.04) brightness(0.88);
+}
+
+.dn-contact-map-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(23, 23, 26, 0.02), rgba(23, 23, 26, 0.58)),
+        radial-gradient(circle at 50% 42%, rgba(255, 255, 255, 0.16), transparent 22%);
+}
+
+.dn-contact-map-badge {
+    position: absolute;
+    left: 18px;
+    right: 18px;
+    bottom: 18px;
+    z-index: 2;
+    display: grid;
+    gap: 9px;
+    max-width: 410px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 22px;
+    background: rgba(23, 23, 26, 0.62);
+    padding: 15px;
+    backdrop-filter: blur(14px);
+}
+
+.dn-contact-map-badge span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+    color: #fff;
+    font-size: 0.74rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.dn-contact-map-badge span i,
+.dn-contact-map-badge span svg {
+    width: 15px;
+    height: 15px;
+}
+
+.dn-contact-map-badge strong {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: 0.98rem;
+    line-height: 1.3;
+}
+
+/* =========================
+   FAQ SECTION
+   ========================= */
+
+.dn-contact-faq {
+    padding-top: clamp(34px, 5vw, 64px);
+    padding-bottom: clamp(34px, 5vw, 64px);
+}
+
+.dn-contact-faq-shell {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.52fr) minmax(0, 1fr);
+    gap: 20px;
+    align-items: stretch;
+    width: min(100%, 1120px);
+    margin-inline: auto;
+}
+
+.dn-contact-faq-intro {
+    display: grid;
+    grid-template-rows: 190px 1fr;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+}
+
+.dn-contact-faq-photo {
+    background:
+        linear-gradient(180deg, rgba(23, 23, 26, 0.02), rgba(23, 23, 26, 0.18)),
+        url("../assets/images/contact/contact-faq.jpg") center / cover no-repeat;
+}
+
+.dn-contact-faq-copy {
+    display: grid;
+    align-content: center;
+    gap: 14px;
+    padding: clamp(20px, 3vw, 28px);
+}
+
+.dn-contact-faq-copy .section-kicker {
+    margin-bottom: 0;
+}
+
+.dn-contact-faq-copy h2 {
+    font-size: clamp(1.75rem, 3vw, 2.85rem);
+}
+
+.dn-contact-faq-copy p {
+    color: var(--color-muted);
+    font-size: 0.94rem;
+    line-height: 1.58;
+}
+
+.dn-contact-faq-copy .btn {
+    width: fit-content;
+}
+
+.dn-contact-faq-list {
+    align-content: start;
+    gap: 10px;
+}
+
+.dn-contact-faq-list .faq-item {
+    border-radius: 22px;
+    box-shadow: 0 10px 24px rgba(23, 23, 26, 0.04);
+}
+
+.dn-contact-faq-list .faq-question {
+    padding: 19px 20px;
+}
+
+.dn-contact-faq-list .faq-answer-inner {
+    padding: 0 20px 19px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1120px) {
+    .dn-contact-hero {
+        min-height: auto;
     }
 
-    .contact-simple-card,
-    .contact-simple-form-card {
-        min-height: 410px;
-        border-radius: 24px;
-        padding: 16px;
+    .dn-contact-hero-inner,
+    .dn-contact-request-grid,
+    .dn-contact-map-shell,
+    .dn-contact-faq-shell {
+        grid-template-columns: 1fr;
+        width: min(100%, 760px);
     }
 
-    .contact-simple-card-content h2 {
-        font-size: clamp(1.65rem, 3.6vw, 2.55rem);
+    .dn-contact-hero-content,
+    .dn-contact-hero-panel {
+        min-height: auto;
     }
 
-    .contact-simple-card-content p,
-    .contact-simple-methods a,
-    .contact-simple-methods div {
-        font-size: 0.76rem;
+    .dn-contact-hero-panel {
+        border-radius: 28px;
     }
 
-    .contact-simple-form-head h2 {
-        font-size: 1.75rem;
+    .dn-contact-info-card {
+        grid-template-columns: 0.48fr 1fr;
+        min-height: 360px;
     }
 
-    .contact-simple-form-head p {
-        font-size: 0.78rem;
+    .dn-contact-map-card {
+        min-height: 380px;
     }
 
-    .contact-simple-fields {
-        gap: 7px;
-    }
-
-    .contact-simple-fields .form-field input,
-    .contact-simple-fields .form-field select,
-    .contact-simple-fields .form-field textarea {
-        min-height: 35px;
-        padding: 6px 9px;
-        font-size: 0.8rem;
-    }
-
-    .contact-simple-fields .form-field textarea {
-        min-height: 66px;
-        max-height: 66px;
-    }
-
-    .contact-simple-check {
-        font-size: 0.7rem;
-    }
-
-    .contact-simple-submit .btn {
-        min-height: 37px;
-        padding: 7px 12px;
-        font-size: 0.78rem;
+    .dn-contact-faq-intro {
+        grid-template-rows: 220px auto;
     }
 }
 
-/* MOBILE */
+@media (max-width: 720px) {
 
-@media (max-width: 760px) {
-    .contact-simple {
+    .dn-contact-hero,
+    .dn-contact-request,
+    .dn-contact-map-section,
+    .dn-contact-faq {
         padding-top: 28px;
         padding-bottom: 34px;
     }
 
-    .contact-simple-shell {
-        grid-template-columns: 1fr;
+    .dn-contact-hero-inner,
+    .dn-contact-request-grid,
+    .dn-contact-map-shell,
+    .dn-contact-faq-shell {
         width: min(100%, 430px);
-        gap: 10px;
     }
 
-    .contact-simple-card,
-    .contact-simple-form-card {
-        min-height: auto;
+    .dn-contact-hero-content,
+    .dn-contact-hero-panel,
+    .dn-contact-info-card,
+    .dn-contact-form-card,
+    .dn-contact-map-copy,
+    .dn-contact-map-card,
+    .dn-contact-faq-intro {
         border-radius: 24px;
     }
 
-    .contact-simple-card {
-        min-height: 280px;
+    .dn-contact-hero-content h1 {
+        font-size: clamp(2.2rem, 11vw, 3.4rem);
+        line-height: 1;
     }
 
-    .contact-simple-form-card {
-        padding: 16px;
+    .dn-contact-hero-actions {
+        flex-direction: column;
+        width: 100%;
     }
 
-    .contact-simple-fields {
+    .dn-contact-hero-actions .btn {
+        width: 100%;
+    }
+
+    .dn-contact-info-card {
         grid-template-columns: 1fr;
     }
 
-    .contact-simple-submit {
+    .dn-contact-info-photo {
+        min-height: 220px;
+    }
+
+    .dn-contact-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dn-contact-form-submit {
         align-items: flex-start;
         flex-direction: column;
     }
 
-    .contact-simple-submit p {
+    .dn-contact-form-submit p {
         max-width: 100%;
         text-align: left;
     }
 
-    .contact-simple-submit .btn {
-        width: auto;
-    }
-}
-
-@media (max-width: 420px) {
-    .contact-simple-card {
-        min-height: 250px;
-    }
-
-    .contact-simple-submit .btn {
+    .dn-contact-form-submit .btn,
+    .dn-contact-faq-copy .btn {
         width: 100%;
+    }
+
+    .dn-contact-address,
+    .dn-contact-map-points article,
+    .dn-contact-methods a,
+    .dn-contact-methods div {
+        grid-template-columns: 1fr;
+    }
+
+    .dn-contact-map-card {
+        min-height: 320px;
+    }
+
+    .dn-contact-map-badge {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        border-radius: 18px;
+    }
+
+    .dn-contact-faq-intro {
+        grid-template-rows: 180px auto;
     }
 }
 
 /* ==========================================================
-   CONTACT SIMPLE — DESKTOP WIDER INFO CARD ONLY
+   CONTACT PAGE — WIDE + COMPACT FINAL FIX
+   Put this at the VERY BOTTOM of contact.css
    ========================================================== */
 
-@media (min-width: 1101px) {
-    .contact-simple-shell {
-        grid-template-columns: minmax(420px, 0.92fr) minmax(0, 0.82fr) !important;
-        width: min(100%, 1120px) !important;
-        gap: 16px !important;
+/* общая идея: секции шире, высота ниже */
+.contact-page .container-wide {
+    width: min(100% - 40px, 1380px) !important;
+}
+
+/* меньше вертикальные отступы между секциями */
+.dn-contact-hero,
+.dn-contact-request,
+.dn-contact-map-section,
+.dn-contact-faq {
+    padding-top: clamp(22px, 3vw, 38px) !important;
+    padding-bottom: clamp(22px, 3vw, 38px) !important;
+}
+
+/* =========================
+   HERO — WIDE + NOT TALL
+   ========================= */
+
+.dn-contact-hero {
+    min-height: auto !important;
+    height: auto !important;
+    align-items: stretch !important;
+}
+
+.dn-contact-hero-inner {
+    width: min(100%, 1380px) !important;
+    grid-template-columns: minmax(0, 1.35fr) minmax(300px, 0.42fr) !important;
+    gap: 18px !important;
+}
+
+.dn-contact-hero-content {
+    min-height: 430px !important;
+    height: 430px !important;
+    align-content: center !important;
+    padding: clamp(26px, 4vw, 44px) !important;
+    border-radius: 30px !important;
+}
+
+.dn-contact-hero-content h1 {
+    max-width: 920px !important;
+    font-size: clamp(2.6rem, 5vw, 5.1rem) !important;
+    line-height: 0.98 !important;
+}
+
+.dn-contact-hero-content .lead {
+    max-width: 720px !important;
+    font-size: 1rem !important;
+    line-height: 1.58 !important;
+}
+
+.dn-contact-hero-panel {
+    min-height: 430px !important;
+    height: 430px !important;
+    border-radius: 30px !important;
+    padding: 24px !important;
+}
+
+/* =========================
+   FORM + INFO — WIDER, LOWER
+   ========================= */
+
+.dn-contact-request-grid {
+    width: min(100%, 1380px) !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(390px, 0.58fr) !important;
+    gap: 22px !important;
+    align-items: stretch !important;
+}
+
+.dn-contact-info-card,
+.dn-contact-form-card {
+    min-height: 380px !important;
+    height: auto !important;
+    border-radius: 30px !important;
+}
+
+.dn-contact-info-card {
+    grid-template-columns: minmax(240px, 0.42fr) minmax(0, 1fr) !important;
+}
+
+.dn-contact-info-photo {
+    min-height: 100% !important;
+}
+
+.dn-contact-info-content {
+    padding: 24px !important;
+    gap: 13px !important;
+}
+
+.dn-contact-info-content h2 {
+    max-width: 560px !important;
+    font-size: clamp(1.9rem, 3vw, 3rem) !important;
+}
+
+.dn-contact-info-content p {
+    max-width: 580px !important;
+    font-size: 0.92rem !important;
+    line-height: 1.5 !important;
+}
+
+.dn-contact-methods {
+    gap: 8px !important;
+}
+
+.dn-contact-methods a,
+.dn-contact-methods div {
+    min-height: 54px !important;
+    padding: 9px 10px !important;
+    border-radius: 16px !important;
+}
+
+/* форма компактнее */
+.dn-contact-form-card {
+    padding: 18px !important;
+    align-content: start !important;
+    gap: 12px !important;
+}
+
+.dn-contact-form-head {
+    gap: 5px !important;
+    padding-bottom: 9px !important;
+}
+
+.dn-contact-form-head h2 {
+    font-size: clamp(1.45rem, 2vw, 2rem) !important;
+}
+
+.dn-contact-form-head p {
+    font-size: 0.8rem !important;
+    line-height: 1.4 !important;
+}
+
+.dn-contact-form {
+    gap: 10px !important;
+}
+
+.dn-contact-form-grid {
+    gap: 8px !important;
+}
+
+.dn-contact-form-grid .form-field input,
+.dn-contact-form-grid .form-field select {
+    min-height: 36px !important;
+    padding: 7px 10px !important;
+    font-size: 0.82rem !important;
+}
+
+.dn-contact-form-grid .form-field textarea {
+    min-height: 70px !important;
+    max-height: 70px !important;
+    padding: 7px 10px !important;
+    font-size: 0.82rem !important;
+}
+
+.dn-contact-check {
+    font-size: 0.72rem !important;
+    line-height: 1.3 !important;
+}
+
+.dn-contact-form-submit .btn {
+    min-height: 38px !important;
+    padding: 8px 13px !important;
+    font-size: 0.8rem !important;
+}
+
+.dn-contact-form-submit p {
+    font-size: 0.68rem !important;
+}
+
+/* =========================
+   MAP SECTION — WIDE MAP, LOWER HEIGHT
+   ========================= */
+
+.dn-contact-map-shell {
+    width: min(100%, 1380px) !important;
+    grid-template-columns: minmax(360px, 0.48fr) minmax(0, 1.18fr) !important;
+    gap: 22px !important;
+}
+
+.dn-contact-map-copy,
+.dn-contact-map-card {
+    min-height: 360px !important;
+    border-radius: 30px !important;
+}
+
+.dn-contact-map-copy {
+    padding: 24px !important;
+    gap: 13px !important;
+}
+
+.dn-contact-map-copy h2 {
+    font-size: clamp(1.8rem, 2.7vw, 2.85rem) !important;
+}
+
+.dn-contact-map-copy p {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+}
+
+.dn-contact-address {
+    padding: 12px !important;
+    border-radius: 18px !important;
+}
+
+.dn-contact-map-points {
+    gap: 8px !important;
+}
+
+.dn-contact-map-points article {
+    padding: 11px !important;
+    border-radius: 18px !important;
+}
+
+.dn-contact-map-card {
+    height: 360px !important;
+}
+
+/* =========================
+   FAQ — WIDE, COMPACT, CLEAN
+   ========================= */
+
+.dn-contact-faq-shell {
+    width: min(100%, 1380px) !important;
+    grid-template-columns: minmax(360px, 0.48fr) minmax(0, 1.18fr) !important;
+    gap: 22px !important;
+}
+
+.dn-contact-faq-intro {
+    grid-template-rows: 145px auto !important;
+    min-height: 360px !important;
+    border-radius: 30px !important;
+}
+
+.dn-contact-faq-copy {
+    padding: 22px !important;
+    gap: 12px !important;
+}
+
+.dn-contact-faq-copy h2 {
+    font-size: clamp(1.7rem, 2.6vw, 2.65rem) !important;
+}
+
+.dn-contact-faq-copy p {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+}
+
+.dn-contact-faq-list {
+    display: grid !important;
+    gap: 9px !important;
+    align-content: start !important;
+}
+
+.dn-contact-faq-list .faq-item {
+    border-radius: 18px !important;
+}
+
+.dn-contact-faq-list .faq-question {
+    min-height: 52px !important;
+    padding: 14px 16px !important;
+    font-size: 0.92rem !important;
+}
+
+.dn-contact-faq-list .faq-answer-inner {
+    padding: 0 16px 14px !important;
+}
+
+.dn-contact-faq-list .faq-answer p {
+    font-size: 0.86rem !important;
+    line-height: 1.5 !important;
+}
+
+/* =========================
+   TABLET — still wide, not too narrow
+   ========================= */
+
+@media (max-width: 1120px) {
+    .contact-page .container-wide {
+        width: min(100% - 32px, 960px) !important;
     }
 
-    .contact-simple-card {
-        min-height: 460px !important;
-        padding: 30px !important;
+    .dn-contact-hero-inner,
+    .dn-contact-request-grid,
+    .dn-contact-map-shell,
+    .dn-contact-faq-shell {
+        width: min(100%, 960px) !important;
+        grid-template-columns: 1fr !important;
     }
 
-    .contact-simple-card-content {
-        gap: 14px !important;
+    .dn-contact-hero-content,
+    .dn-contact-hero-panel {
+        height: auto !important;
+        min-height: 260px !important;
     }
 
-    .contact-simple-card-content h2 {
-        max-width: 520px !important;
-        font-size: clamp(2.15rem, 3.8vw, 3.65rem) !important;
+    .dn-contact-info-card {
+        grid-template-columns: minmax(220px, 0.38fr) minmax(0, 1fr) !important;
+        min-height: 320px !important;
     }
 
-    .contact-simple-card-content p {
-        max-width: 540px !important;
-        font-size: 0.98rem !important;
-        line-height: 1.6 !important;
+    .dn-contact-form-card {
+        max-width: 760px !important;
+        justify-self: center !important;
+        width: 100% !important;
     }
 
-    .contact-simple-methods {
-        gap: 10px !important;
+    .dn-contact-map-card {
+        height: 340px !important;
+        min-height: 340px !important;
     }
 
-    .contact-simple-methods a,
-    .contact-simple-methods div {
-        max-width: 520px !important;
-        font-size: 0.9rem !important;
-        line-height: 1.4 !important;
-    }
-
-    .contact-simple-note {
-        max-width: 540px !important;
-        padding: 14px !important;
-    }
-
-    .contact-simple-note p {
-        font-size: 0.84rem !important;
-        line-height: 1.45 !important;
+    .dn-contact-faq-intro {
+        min-height: auto !important;
     }
 }
 
+/* =========================
+   MOBILE — compact but readable
+   ========================= */
+
+@media (max-width: 720px) {
+    .contact-page .container-wide {
+        width: min(100% - 24px, 520px) !important;
+    }
+
+    .dn-contact-hero,
+    .dn-contact-request,
+    .dn-contact-map-section,
+    .dn-contact-faq {
+        padding-top: 22px !important;
+        padding-bottom: 28px !important;
+    }
+
+    .dn-contact-hero-content,
+    .dn-contact-hero-panel,
+    .dn-contact-info-card,
+    .dn-contact-form-card,
+    .dn-contact-map-copy,
+    .dn-contact-map-card,
+    .dn-contact-faq-intro {
+        border-radius: 24px !important;
+    }
+
+    .dn-contact-hero-content {
+        min-height: 330px !important;
+        padding: 20px !important;
+    }
+
+    .dn-contact-hero-content h1 {
+        font-size: clamp(2.2rem, 11vw, 3.4rem) !important;
+    }
+
+    .dn-contact-hero-panel {
+        min-height: auto !important;
+        padding: 18px !important;
+    }
+
+    .dn-contact-info-card {
+        grid-template-columns: 1fr !important;
+        min-height: auto !important;
+    }
+
+    .dn-contact-info-photo {
+        min-height: 180px !important;
+    }
+
+    .dn-contact-form-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    .dn-contact-form-card {
+        padding: 16px !important;
+    }
+
+    .dn-contact-form-submit {
+        align-items: flex-start !important;
+        flex-direction: column !important;
+    }
+
+    .dn-contact-form-submit p {
+        max-width: 100% !important;
+        text-align: left !important;
+    }
+
+    .dn-contact-form-submit .btn,
+    .dn-contact-faq-copy .btn,
+    .dn-contact-hero-actions .btn {
+        width: 100% !important;
+    }
+
+    .dn-contact-map-card {
+        height: 300px !important;
+        min-height: 300px !important;
+    }
+
+    .dn-contact-faq-intro {
+        grid-template-rows: 150px auto !important;
+    }
+}
+
+
+/* ==========================================================
+   MAP SECTION — PHOTO STRIP UNDER MAP
+   Put at the very bottom of contact.css
+   ========================================================== */
+
+.dn-contact-map-side {
+    display: grid !important;
+    grid-template-rows: minmax(250px, 1fr) 118px !important;
+    gap: 14px !important;
+    min-height: 360px !important;
+}
+
+.dn-contact-map-side .dn-contact-map-card {
+    height: auto !important;
+    min-height: 250px !important;
+}
+
+.dn-contact-map-photo {
+    position: relative;
+    overflow: hidden;
+    min-height: 118px;
+    max-height: 140px;
+    border: 1px solid var(--color-border);
+    border-radius: 24px;
+    background:
+        linear-gradient(90deg, rgba(23, 23, 26, 0.82), rgba(23, 23, 26, 0.28)),
+        url("../assets/images/contact/contact-area.jpg") center / cover no-repeat;
+    box-shadow: var(--shadow-card);
+}
+
+.dn-contact-map-photo>div {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    align-content: center;
+    gap: 4px;
+    height: 100%;
+    max-width: 420px;
+    padding: 18px;
+}
+
+.dn-contact-map-photo span {
+    color: rgba(255, 255, 255, 0.62);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.dn-contact-map-photo strong {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+/* Tablet */
+@media (max-width: 1120px) {
+    .dn-contact-map-side {
+        grid-template-rows: 330px 110px !important;
+        min-height: auto !important;
+    }
+
+    .dn-contact-map-side .dn-contact-map-card {
+        min-height: 330px !important;
+    }
+
+    .dn-contact-map-photo {
+        min-height: 110px;
+        max-height: 120px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+    .dn-contact-map-side {
+        grid-template-rows: 300px 96px !important;
+        gap: 10px !important;
+    }
+
+    .dn-contact-map-side .dn-contact-map-card {
+        min-height: 300px !important;
+    }
+
+    .dn-contact-map-photo {
+        min-height: 96px;
+        max-height: 105px;
+        border-radius: 20px;
+    }
+
+    .dn-contact-map-photo>div {
+        padding: 14px;
+    }
+
+    .dn-contact-map-photo strong {
+        font-size: 0.88rem;
+    }
+}
