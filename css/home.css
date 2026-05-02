@@ -1,0 +1,550 @@
+/* ==========================================================
+   DRAINLY — HOME PAGE
+   File: /css/home.css
+   ========================================================== */
+
+/* =========================
+   HERO
+   ========================= */
+
+.home-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(42px, 6vw, 84px);
+}
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+    top: -180px;
+    right: -180px;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: rgba(106, 102, 95, 0.08);
+    pointer-events: none;
+}
+
+.home-hero::after {
+    content: "";
+    position: absolute;
+    left: -160px;
+    bottom: -220px;
+    width: 420px;
+    height: 420px;
+    border-radius: 50%;
+    background: rgba(23, 23, 26, 0.045);
+    pointer-events: none;
+}
+
+.home-hero-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 0.85fr);
+    gap: clamp(28px, 5vw, 74px);
+    align-items: center;
+}
+
+.home-hero-content {
+    display: grid;
+    gap: 20px;
+    max-width: 790px;
+}
+
+.home-hero-content h1 {
+    max-width: 760px;
+}
+
+.home-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.home-hero-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 650px;
+    margin-top: 8px;
+    border: 1px solid var(--color-border);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.58);
+    padding: 14px;
+}
+
+.home-hero-note i,
+.home-hero-note svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    margin-top: 2px;
+    color: var(--color-accent);
+}
+
+.home-hero-note p {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+/* =========================
+   HERO VISUAL
+   ========================= */
+
+.home-hero-visual {
+    position: relative;
+    min-height: 560px;
+}
+
+.hero-photo-main {
+    position: absolute;
+    inset: 0 0 0 42px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 46px;
+    background: var(--color-dark);
+    box-shadow: var(--shadow-soft);
+}
+
+.hero-photo-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.92;
+}
+
+.hero-photo-main::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(23, 23, 26, 0.06), rgba(23, 23, 26, 0.34)),
+        radial-gradient(circle at 28% 24%, rgba(255, 255, 255, 0.34), transparent 28%);
+}
+
+.hero-floating-card,
+.hero-orbit-card {
+    position: absolute;
+    z-index: 3;
+    border: 1px solid rgba(218, 217, 213, 0.9);
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: 0 18px 48px rgba(23, 23, 26, 0.12);
+    backdrop-filter: blur(16px);
+}
+
+.hero-floating-card {
+    display: grid;
+    gap: 3px;
+    min-width: 205px;
+    border-radius: 22px;
+    padding: 16px 18px;
+}
+
+.hero-floating-card span {
+    color: var(--color-muted);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+
+.hero-floating-card strong {
+    color: var(--color-heading);
+    font-size: 0.98rem;
+    line-height: 1.25;
+}
+
+.hero-card-top {
+    top: 54px;
+    left: 0;
+}
+
+.hero-card-bottom {
+    right: 18px;
+    bottom: 78px;
+}
+
+.hero-orbit-card {
+    right: 44px;
+    top: 120px;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border-radius: var(--radius-pill);
+    padding: 11px 14px;
+    color: var(--color-heading);
+    font-size: 0.86rem;
+    font-weight: 800;
+}
+
+.hero-orbit-card i,
+.hero-orbit-card svg {
+    width: 17px;
+    height: 17px;
+    color: var(--color-accent);
+}
+
+/* =========================
+   HOME SERVICES
+   ========================= */
+
+.home-services {
+    position: relative;
+}
+
+.home-service-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+/* =========================
+   PROCESS
+   ========================= */
+
+.home-process {
+    position: relative;
+}
+
+.home-process-panel {
+    display: grid;
+    grid-template-columns: minmax(360px, 0.8fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(228, 226, 222, 0.46));
+    padding: clamp(16px, 2vw, 24px);
+    box-shadow: var(--shadow-soft);
+}
+
+.home-process-media {
+    position: relative;
+    min-height: 500px;
+    overflow: hidden;
+    border-radius: 32px;
+    background: var(--color-dark);
+}
+
+.home-process-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    opacity: 0.88;
+}
+
+.home-process-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(23, 23, 26, 0.04), rgba(23, 23, 26, 0.48));
+}
+
+.process-media-badge {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    z-index: 2;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: var(--radius-pill);
+    background: rgba(255, 255, 255, 0.13);
+    color: #fff;
+    padding: 10px 13px;
+    font-size: 0.82rem;
+    font-weight: 800;
+    backdrop-filter: blur(14px);
+}
+
+.process-media-badge i,
+.process-media-badge svg {
+    width: 17px;
+    height: 17px;
+}
+
+.home-process-content {
+    display: grid;
+    gap: 18px;
+    padding: clamp(8px, 2vw, 20px);
+}
+
+.home-process-content h2 {
+    max-width: 640px;
+}
+
+.process-steps {
+    display: grid;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.process-steps article {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr);
+    gap: 14px;
+    align-items: start;
+    border: 1px solid var(--color-border);
+    border-radius: 22px;
+    background: #fff;
+    padding: 16px;
+    transition:
+        border-color var(--transition-base),
+        background var(--transition-base);
+}
+
+.process-steps article:hover {
+    border-color: var(--color-accent);
+    background: #fbfbfa;
+}
+
+.process-steps article>span {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 15px;
+    background: var(--color-accent-soft);
+    color: var(--color-accent-hover);
+    font-size: 0.84rem;
+    font-weight: 800;
+}
+
+.process-steps h3 {
+    margin-bottom: 4px;
+    font-size: 1.04rem;
+}
+
+.process-steps p {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+/* =========================
+   REQUEST + FAQ
+   ========================= */
+
+.home-request {
+    position: relative;
+}
+
+.home-request-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.75fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.home-request-card,
+.home-faq-panel {
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+}
+
+.home-request-card {
+    display: grid;
+    gap: 18px;
+    padding: clamp(20px, 3vw, 32px);
+}
+
+.home-request-card h2 {
+    max-width: 620px;
+}
+
+.mini-request-form {
+    display: grid;
+    gap: 14px;
+}
+
+.home-faq-panel {
+    position: sticky;
+    top: calc(var(--header-height) + 18px);
+    display: grid;
+    gap: 18px;
+    padding: clamp(20px, 3vw, 28px);
+}
+
+.home-faq-panel h2 {
+    font-size: clamp(1.75rem, 3vw, 2.65rem);
+}
+
+.home-faq-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1180px) {
+    .home-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .home-hero-content {
+        max-width: 900px;
+    }
+
+    .home-hero-visual {
+        min-height: 520px;
+    }
+
+    .hero-photo-main {
+        inset: 0;
+    }
+
+    .home-service-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .home-process-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .home-process-media {
+        min-height: 380px;
+    }
+
+    .home-process-media img {
+        min-height: 380px;
+    }
+
+    .home-request-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .home-faq-panel {
+        position: static;
+    }
+}
+
+@media (max-width: 760px) {
+    .home-hero {
+        padding-top: 34px;
+    }
+
+    .home-hero-content {
+        gap: 16px;
+    }
+
+    .home-hero-actions {
+        width: 100%;
+    }
+
+    .home-hero-actions .btn {
+        flex: 1;
+    }
+
+    .home-hero-visual {
+        min-height: 430px;
+    }
+
+    .hero-photo-main {
+        border-radius: 32px;
+    }
+
+    .hero-floating-card {
+        min-width: 170px;
+        padding: 13px 14px;
+    }
+
+    .hero-card-top {
+        top: 18px;
+        left: 12px;
+    }
+
+    .hero-card-bottom {
+        right: 12px;
+        bottom: 22px;
+    }
+
+    .hero-orbit-card {
+        top: auto;
+        right: auto;
+        left: 12px;
+        bottom: 106px;
+    }
+
+    .home-service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .square-service-card {
+        aspect-ratio: auto;
+    }
+
+    .home-process-panel {
+        border-radius: 28px;
+        padding: 12px;
+    }
+
+    .home-process-media {
+        min-height: 320px;
+        border-radius: 24px;
+    }
+
+    .home-process-media img {
+        min-height: 320px;
+    }
+
+    .process-steps article {
+        grid-template-columns: 1fr;
+    }
+
+    .process-steps article>span {
+        width: fit-content;
+        min-width: 44px;
+        padding-inline: 12px;
+    }
+
+    .home-request-card,
+    .home-faq-panel {
+        border-radius: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-hero-note {
+        border-radius: 18px;
+    }
+
+    .home-hero-actions {
+        flex-direction: column;
+    }
+
+    .home-hero-visual {
+        min-height: 390px;
+    }
+
+    .hero-floating-card {
+        min-width: 150px;
+    }
+
+    .hero-floating-card strong {
+        font-size: 0.88rem;
+    }
+
+    .hero-floating-card span {
+        font-size: 0.68rem;
+    }
+
+    .hero-orbit-card {
+        display: none;
+    }
+
+    .home-faq-cta {
+        flex-direction: column;
+    }
+}

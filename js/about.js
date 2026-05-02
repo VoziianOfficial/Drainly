@@ -1,0 +1,39 @@
+"use strict";
+
+/* ==========================================================
+   DRAINLY — ABOUT PAGE SCRIPT
+   File: /js/about.js
+   ========================================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+    initAboutAos();
+    refreshAboutIcons();
+});
+
+function initAboutAos() {
+    if (window.AOS && typeof window.AOS.init === "function") {
+        document.body.classList.add("aos-ready");
+
+        window.AOS.init({
+            duration: 700,
+            easing: "ease-out-cubic",
+            once: true,
+            offset: 70
+        });
+
+        return;
+    }
+
+    document.body.classList.add("no-aos");
+}
+
+function refreshAboutIcons() {
+    if (window.DRAINLY && typeof window.DRAINLY.refreshIcons === "function") {
+        window.DRAINLY.refreshIcons();
+        return;
+    }
+
+    if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+    }
+}

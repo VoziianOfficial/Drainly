@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Drainly | Start a Gutter Request</title>
+    <meta name="description"
+        content="Contact Drainly to begin a gutter provider matching request for installation, replacement, repair, or cleaning.">
+
+    <link rel="icon" href="./favicon.ico" sizes="any">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body class="contact-page">
+    <div class="page-shell">
+        <div data-site-header></div>
+
+        <main id="main">
+            <!-- =========================
+                 CONTACT HERO
+                 ========================= -->
+            <section class="contact-hero section" aria-labelledby="contactHeroTitle">
+                <div class="container-wide">
+                    <div class="contact-hero-panel">
+                        <div class="contact-hero-content" data-aos="fade-up">
+                            <span class="section-kicker">
+                                <i data-lucide="send"></i>
+                                Start a gutter request
+                            </span>
+
+                            <h1 id="contactHeroTitle">
+                                Tell Drainly what kind of gutter provider you want to compare.
+                            </h1>
+
+                            <p class="lead">
+                                Use this page to begin a matching request for gutter installation, replacement,
+                                repair, or cleaning. Drainly is not a contractor and does not perform gutter work
+                                directly.
+                            </p>
+
+                            <div class="contact-hero-actions">
+                                <a href="tel:+18887402168" class="btn btn-primary" data-phone-link>
+                                    <i data-lucide="phone"></i>
+                                    <span data-phone-label>Call Drainly</span>
+                                </a>
+
+                                <a href="services.html" class="btn btn-light">
+                                    View services
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="contact-hero-card" data-aos="fade-left">
+                            <i data-lucide="shield-check"></i>
+                            <h2>Platform reminder</h2>
+                            <p>
+                                Drainly helps homeowners connect with independent local providers. Homeowners should
+                                verify license, insurance, quote details, and service scope before hiring.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================
+                 CONTACT MAIN
+                 ========================= -->
+            <section class="contact-main section-sm" aria-labelledby="contactFormTitle">
+                <div class="container-wide">
+                    <div class="contact-main-layout">
+                        <div class="contact-info-panel" data-aos="fade-right">
+                            <span class="section-kicker">
+                                <i data-lucide="messages-square"></i>
+                                Contact options
+                            </span>
+
+                            <h2>
+                                A simple way to begin comparing local gutter providers.
+                            </h2>
+
+                            <p class="lead">
+                                Share the basic request details. The more specific the notes, the easier it may be
+                                to identify provider options that fit the category and location.
+                            </p>
+
+                            <div class="contact-methods">
+                                <a href="tel:+18887402168" data-phone-link>
+                                    <i data-lucide="phone"></i>
+                                    <div>
+                                        <span>Phone</span>
+                                        <strong data-phone-text>+1 888 740 2168</strong>
+                                    </div>
+                                </a>
+
+                                <a href="mailto:hello@drainlymatch.com" data-email-link>
+                                    <i data-lucide="mail"></i>
+                                    <div>
+                                        <span>Email</span>
+                                        <strong data-email-text>hello@drainlymatch.com</strong>
+                                    </div>
+                                </a>
+
+                                <div>
+                                    <i data-lucide="map-pin"></i>
+                                    <div>
+                                        <span>Service area</span>
+                                        <strong data-service-area>Independent gutter provider matching across the United
+                                            States</strong>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="contact-small-note">
+                                <i data-lucide="info"></i>
+                                <p>
+                                    Submitting a request does not hire a provider. Any quote, inspection, project scope,
+                                    or scheduling details should be confirmed directly with the independent company.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="form-card contact-form-card" data-aos="fade-left">
+                            <span class="section-kicker">
+                                <i data-lucide="clipboard-list"></i>
+                                Request form
+                            </span>
+
+                            <h2 id="contactFormTitle">
+                                Start with the project basics.
+                            </h2>
+
+                            <form class="contact-form" action="#" method="post">
+                                <div class="form-grid">
+                                    <div class="form-field">
+                                        <label for="contactName">Full name</label>
+                                        <input id="contactName" name="name" type="text" placeholder="Your name"
+                                            autocomplete="name">
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="contactPhone">Phone</label>
+                                        <input id="contactPhone" name="phone" type="tel" placeholder="Phone number"
+                                            autocomplete="tel">
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="contactEmail">Email</label>
+                                        <input id="contactEmail" name="email" type="email" placeholder="Email address"
+                                            autocomplete="email">
+                                    </div>
+
+                                    <div class="form-field">
+                                        <label for="contactZip">ZIP code</label>
+                                        <input id="contactZip" name="zip" type="text" placeholder="ZIP code"
+                                            inputmode="numeric" autocomplete="postal-code">
+                                    </div>
+
+                                    <div class="form-field full">
+                                        <label for="contactProject">Project type</label>
+                                        <select id="contactProject" name="projectType">
+                                            <option value="">Select request type</option>
+                                            <option value="gutter-installation">Gutter installation</option>
+                                            <option value="gutter-replacement">Gutter replacement</option>
+                                            <option value="gutter-repair">Gutter repair</option>
+                                            <option value="gutter-cleaning">Gutter cleaning</option>
+                                            <option value="not-sure">Not sure yet</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-field full">
+                                        <label for="contactMessage">Project notes</label>
+                                        <textarea id="contactMessage" name="message"
+                                            placeholder="Describe visible issues, timing, property type, or what you want to compare."></textarea>
+                                    </div>
+
+                                    <label class="form-check full">
+                                        <input type="checkbox" name="platformNotice">
+                                        <span>
+                                            I understand Drainly is a matching platform and does not perform gutter
+                                            services directly.
+                                        </span>
+                                    </label>
+                                </div>
+
+                                <button class="btn btn-primary" type="submit">
+                                    Request provider options
+                                    <i data-lucide="arrow-right"></i>
+                                </button>
+
+                                <p class="form-note">
+                                    Drainly may help route your request toward independent provider options.
+                                    Provider availability, quote terms, and service scope can vary.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================
+                 MAP / AREA
+                 ========================= -->
+            <section class="contact-area section-sm" aria-labelledby="contactAreaTitle">
+                <div class="container-wide">
+                    <div class="contact-area-layout">
+                        <div class="map-card" data-aos="fade-right">
+                            <img src="./assets/images/contact/contact-map.jpg"
+                                alt="Abstract USA service area map visual">
+
+                            <div class="map-card-content">
+                                <span class="map-pin-ui">
+                                    <i data-lucide="map-pin"></i>
+                                    USA matching area
+                                </span>
+
+                                <h2 id="contactAreaTitle">
+                                    Provider availability starts with location.
+                                </h2>
+
+                                <p>
+                                    Drainly focuses on gutter provider matching across the United States. Actual service
+                                    area coverage depends on independent provider availability near the homeowner.
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="contact-area-details" data-aos="fade-left">
+                            <span class="section-kicker">
+                                <i data-lucide="map"></i>
+                                Location-based matching
+                            </span>
+
+                            <h2>
+                                Why ZIP code and project type matter.
+                            </h2>
+
+                            <div class="contact-area-list">
+                                <article>
+                                    <i data-lucide="navigation"></i>
+                                    <div>
+                                        <h3>Local coverage can vary</h3>
+                                        <p>
+                                            Some providers may serve specific cities, counties, neighborhoods, or ZIP
+                                            codes.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article>
+                                    <i data-lucide="calendar-clock"></i>
+                                    <div>
+                                        <h3>Timing may change by season</h3>
+                                        <p>
+                                            Rain seasons, storm periods, and local demand can affect scheduling
+                                            availability.
+                                        </p>
+                                    </div>
+                                </article>
+
+                                <article>
+                                    <i data-lucide="list-checks"></i>
+                                    <div>
+                                        <h3>Project details improve fit</h3>
+                                        <p>
+                                            Notes about leaks, overflow, debris, height, or replacement needs help
+                                            clarify the request.
+                                        </p>
+                                    </div>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================
+                 CONTACT FAQ
+                 ========================= -->
+            <section class="contact-faq section" aria-labelledby="contactFaqTitle">
+                <div class="container-wide">
+                    <div class="contact-faq-layout">
+                        <div class="contact-faq-intro" data-aos="fade-up">
+                            <span class="section-kicker">
+                                <i data-lucide="message-circle-question"></i>
+                                Contact FAQ
+                            </span>
+
+                            <h2 id="contactFaqTitle">
+                                Before you submit the request.
+                            </h2>
+
+                            <p class="lead">
+                                These answers explain what happens when homeowners contact Drainly and how the platform
+                                stays separate from independent providers.
+                            </p>
+
+                            <a href="tel:+18887402168" class="btn btn-primary" data-phone-link>
+                                <i data-lucide="phone"></i>
+                                <span data-phone-label>Call Drainly</span>
+                            </a>
+                        </div>
+
+                        <div class="faq-list" data-accordion data-aos="fade-up" data-aos-delay="100">
+                            <article class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Does submitting the form hire a contractor?</span>
+                                    <i data-lucide="plus"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            No. Submitting the form starts a matching request. Hiring decisions,
+                                            quote approval, scheduling, and project terms remain between the homeowner
+                                            and the independent provider.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>What details should I include?</span>
+                                    <i data-lucide="plus"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Include the service category, ZIP code, visible gutter concerns, timing,
+                                            property type, and whether the request is urgent or exploratory.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Will Drainly give the final quote?</span>
+                                    <i data-lucide="plus"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            No. Quote details are provided by independent providers. Homeowners should
+                                            confirm pricing, fees, scope, timing, and written terms directly.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="faq-item">
+                                <button class="faq-question" type="button">
+                                    <span>Should I verify the provider before hiring?</span>
+                                    <i data-lucide="plus"></i>
+                                </button>
+                                <div class="faq-answer">
+                                    <div class="faq-answer-inner">
+                                        <p>
+                                            Yes. Always verify license, insurance, company information, quote details,
+                                            and the required scope before choosing a provider.
+                                        </p>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <div data-site-footer></div>
+    </div>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Does submitting the form hire a contractor?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Submitting the form starts a matching request. Hiring decisions, quote approval, scheduling, and project terms remain between the homeowner and the independent provider."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What details should I include?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Include the service category, ZIP code, visible gutter concerns, timing, property type, and whether the request is urgent or exploratory."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will Drainly give the final quote?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. Quote details are provided by independent providers. Homeowners should confirm pricing, fees, scope, timing, and written terms directly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Should I verify the provider before hiring?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Always verify license, insurance, company information, quote details, and the required scope before choosing a provider."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script src="./js/config.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/contact.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,510 @@
+/* ==========================================================
+   DRAINLY — SERVICE DETAIL PAGES
+   File: /css/service-page.css
+   Used by:
+   - gutter-installation.html
+   - gutter-replacement.html
+   - gutter-repair.html
+   - gutter-cleaning.html
+   ========================================================== */
+
+/* =========================
+   SERVICE HERO
+   ========================= */
+
+.service-hero {
+    position: relative;
+    overflow: hidden;
+    padding-top: clamp(38px, 5vw, 70px);
+}
+
+.service-hero::before {
+    content: "";
+    position: absolute;
+    top: -190px;
+    right: -150px;
+    width: 430px;
+    height: 430px;
+    border-radius: 50%;
+    background: rgba(106, 102, 95, 0.08);
+    pointer-events: none;
+}
+
+.service-hero-layout {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(360px, 0.62fr);
+    gap: clamp(24px, 5vw, 58px);
+    align-items: center;
+}
+
+.service-hero-content {
+    display: grid;
+    gap: 18px;
+}
+
+.service-hero-content h1 {
+    max-width: 820px;
+}
+
+.service-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.service-hero-notice {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    max-width: 650px;
+    border: 1px solid var(--color-border);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.68);
+    padding: 14px;
+}
+
+.service-hero-notice i,
+.service-hero-notice svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    margin-top: 2px;
+    color: var(--color-accent);
+}
+
+.service-hero-notice p {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.service-hero-media {
+    position: relative;
+    min-height: 520px;
+    overflow: hidden;
+    border: 1px solid var(--color-border);
+    border-radius: 44px;
+    background: var(--color-dark);
+    box-shadow: var(--shadow-soft);
+}
+
+.service-hero-media img {
+    width: 100%;
+    height: 100%;
+    min-height: 520px;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.service-hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(180deg, rgba(23, 23, 26, 0.04), rgba(23, 23, 26, 0.54)),
+        radial-gradient(circle at 30% 24%, rgba(255, 255, 255, 0.2), transparent 26%);
+}
+
+.service-hero-media-card {
+    position: absolute;
+    left: 18px;
+    bottom: 18px;
+    z-index: 2;
+    display: grid;
+    gap: 3px;
+    min-width: 210px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.13);
+    color: #fff;
+    padding: 15px 16px;
+    backdrop-filter: blur(14px);
+}
+
+.service-hero-media-card span {
+    color: rgba(255, 255, 255, 0.68);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+}
+
+.service-hero-media-card strong {
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.25;
+}
+
+/* =========================
+   SERVICE OVERVIEW
+   ========================= */
+
+.service-overview {
+    position: relative;
+}
+
+.service-overview-panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(0, 1fr);
+    gap: 18px;
+    align-items: stretch;
+}
+
+.service-overview-copy {
+    display: grid;
+    align-content: center;
+    gap: 16px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+    padding: clamp(22px, 4vw, 38px);
+}
+
+.service-overview-copy h2 {
+    max-width: 680px;
+}
+
+.service-overview-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.service-overview-cards article {
+    display: grid;
+    align-content: start;
+    gap: 12px;
+    min-height: 250px;
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    background: #fff;
+    padding: 20px;
+    transition:
+        border-color var(--transition-base),
+        background var(--transition-base);
+}
+
+.service-overview-cards article:hover {
+    border-color: var(--color-accent);
+    background: #fbfbfa;
+}
+
+.service-overview-cards i,
+.service-overview-cards svg {
+    width: 25px;
+    height: 25px;
+    color: var(--color-accent);
+}
+
+.service-overview-cards h3 {
+    margin-top: 14px;
+    font-size: 1.08rem;
+}
+
+.service-overview-cards p {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+}
+
+/* =========================
+   FACTORS / QUESTIONS
+   ========================= */
+
+.service-details {
+    position: relative;
+}
+
+.service-details-layout {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: stretch;
+}
+
+.service-factor-card,
+.service-question-card {
+    display: grid;
+    align-content: start;
+    gap: 18px;
+    min-height: 420px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+    padding: clamp(22px, 4vw, 36px);
+}
+
+.service-factor-card {
+    background:
+        linear-gradient(135deg, #fff, rgba(228, 226, 222, 0.5));
+}
+
+.service-question-card {
+    background: var(--color-dark);
+    color: #fff;
+}
+
+.service-question-card h2,
+.service-question-card p {
+    color: #fff;
+}
+
+.service-question-card .section-kicker {
+    border-color: var(--color-border-dark);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.service-question-card .section-kicker i,
+.service-question-card .section-kicker svg {
+    color: #fff;
+}
+
+.service-factor-card h2,
+.service-question-card h2 {
+    max-width: 620px;
+    font-size: clamp(1.7rem, 3vw, 2.75rem);
+}
+
+.service-check-list {
+    display: grid;
+    gap: 10px;
+}
+
+.service-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    border: 1px solid var(--color-border);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.72);
+    padding: 13px;
+}
+
+.service-question-card .service-check-list li {
+    border-color: var(--color-border-dark);
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.service-check-list i,
+.service-check-list svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 auto;
+    margin-top: 3px;
+    color: var(--color-accent);
+}
+
+.service-question-card .service-check-list i,
+.service-question-card .service-check-list svg {
+    color: #fff;
+}
+
+.service-check-list span {
+    color: var(--color-text);
+    font-size: 0.94rem;
+    line-height: 1.5;
+}
+
+.service-question-card .service-check-list span {
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* =========================
+   FAQ / CTA
+   ========================= */
+
+.service-faq-section {
+    position: relative;
+}
+
+.service-faq-layout {
+    display: grid;
+    grid-template-columns: minmax(320px, 0.72fr) minmax(0, 1fr);
+    gap: 18px;
+    align-items: start;
+}
+
+.service-cta-panel {
+    position: sticky;
+    top: calc(var(--header-height) + 18px);
+    display: grid;
+    gap: 18px;
+    border-radius: var(--radius-xl);
+    background:
+        linear-gradient(135deg, var(--color-dark), #2a2928);
+    color: #fff;
+    padding: clamp(24px, 4vw, 38px);
+    box-shadow: var(--shadow-dark);
+    overflow: hidden;
+}
+
+.service-cta-panel::before {
+    content: "";
+    position: absolute;
+    right: -110px;
+    bottom: -160px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.06);
+    pointer-events: none;
+}
+
+.service-cta-panel>* {
+    position: relative;
+    z-index: 2;
+}
+
+.service-cta-panel h2,
+.service-cta-panel p {
+    color: #fff;
+}
+
+.service-cta-panel h2 {
+    max-width: 560px;
+    font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.service-cta-panel p {
+    max-width: 540px;
+    color: rgba(255, 255, 255, 0.68);
+}
+
+.service-cta-panel .section-kicker {
+    border-color: var(--color-border-dark);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.service-cta-panel .section-kicker i,
+.service-cta-panel .section-kicker svg {
+    color: #fff;
+}
+
+.service-cta-panel .btn-ghost {
+    border-color: rgba(255, 255, 255, 0.22);
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+}
+
+.service-cta-panel .btn-ghost:hover {
+    border-color: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.service-faq-card {
+    display: grid;
+    gap: 18px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-xl);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+    padding: clamp(20px, 3vw, 30px);
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media (max-width: 1120px) {
+
+    .service-hero-layout,
+    .service-overview-panel,
+    .service-details-layout,
+    .service-faq-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .service-hero-media {
+        min-height: 420px;
+    }
+
+    .service-hero-media img {
+        min-height: 420px;
+    }
+
+    .service-overview-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .service-cta-panel {
+        position: static;
+    }
+}
+
+@media (max-width: 860px) {
+    .service-overview-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .service-overview-cards article,
+    .service-factor-card,
+    .service-question-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .service-hero-actions {
+        width: 100%;
+    }
+
+    .service-hero-actions .btn {
+        flex: 1;
+    }
+
+    .service-hero-media {
+        min-height: 340px;
+        border-radius: 30px;
+    }
+
+    .service-hero-media img {
+        min-height: 340px;
+    }
+
+    .service-hero-notice {
+        border-radius: 18px;
+    }
+
+    .service-overview-copy,
+    .service-factor-card,
+    .service-question-card,
+    .service-cta-panel,
+    .service-faq-card {
+        border-radius: 28px;
+    }
+
+    .service-check-list li {
+        border-radius: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .service-hero-actions {
+        flex-direction: column;
+    }
+
+    .service-hero-actions .btn {
+        width: 100%;
+    }
+
+    .service-hero-media-card {
+        right: 14px;
+        left: 14px;
+        min-width: 0;
+    }
+
+    .service-cta-panel .cta-actions {
+        flex-direction: column;
+    }
+
+    .service-cta-panel .cta-actions .btn {
+        width: 100%;
+    }
+}
