@@ -1419,3 +1419,69 @@
     }
 }
 
+/* ==========================================================
+   REQUEST FORM — TEXTAREA + CHECKBOX ERROR FIX
+   ========================================================== */
+
+/* Desktop: textarea больше и удобнее */
+@media (min-width: 1121px) {
+    .request-clean .request-clean-message textarea {
+        min-height: 108px !important;
+        max-height: 108px !important;
+        line-height: 1.45 !important;
+    }
+}
+
+/* Tablet: чуть больше, но не огромная */
+@media (min-width: 761px) and (max-width: 1120px) {
+    .request-clean .request-clean-message textarea {
+        min-height: 92px !important;
+        max-height: 92px !important;
+        line-height: 1.45 !important;
+    }
+}
+
+/* Mobile: компактно */
+@media (max-width: 760px) {
+    .request-clean .request-clean-message textarea {
+        min-height: 78px !important;
+        max-height: 78px !important;
+        line-height: 1.45 !important;
+    }
+}
+
+/* Checkbox line */
+.request-clean-check {
+    display: grid !important;
+    grid-template-columns: 17px minmax(0, 1fr) !important;
+    column-gap: 10px !important;
+    row-gap: 6px !important;
+    align-items: start !important;
+}
+
+.request-clean-check input[type="checkbox"] {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    margin-top: 2px !important;
+}
+
+.request-clean-check>span:not(.field-error) {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+}
+
+/* Checkbox validation text appears below, aligned with label text */
+.request-clean-check .field-error {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    margin-top: 0 !important;
+    color: #9f3a38 !important;
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    line-height: 1.35 !important;
+}
+
+/* Make checkbox error not push awkwardly */
+.request-clean-check input.is-invalid {
+    margin-bottom: 0 !important;
+}
