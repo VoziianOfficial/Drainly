@@ -1485,3 +1485,67 @@
 .request-clean-check input.is-invalid {
     margin-bottom: 0 !important;
 }
+
+/* ==========================================================
+   REQUEST FORM — TABLET NARROW COMPACT
+   ========================================================== */
+
+@media (min-width: 761px) and (max-width: 1120px) {
+    .request-clean-form-card {
+        width: min(100%, 640px) !important;
+        max-width: 640px !important;
+        justify-self: center !important;
+        padding: 14px !important;
+        border-radius: 24px !important;
+    }
+
+    .request-clean-form {
+        gap: 10px !important;
+    }
+
+    .request-clean-form-head {
+        padding-bottom: 8px !important;
+    }
+
+    .request-clean-form-head h3 {
+        font-size: 1.05rem !important;
+    }
+
+    .request-clean-form-head p {
+        font-size: 0.76rem !important;
+    }
+
+    .request-clean-fields {
+        gap: 8px !important;
+    }
+
+    .request-clean-fields .form-field input,
+    .request-clean-fields .form-field select,
+    .request-clean-fields .form-field textarea {
+        min-height: 37px !important;
+        border-radius: 11px !important;
+        padding: 7px 10px !important;
+        font-size: 0.84rem !important;
+    }
+
+    .request-clean .request-clean-message textarea {
+        min-height: 78px !important;
+        max-height: 78px !important;
+    }
+
+    .request-clean-check {
+        font-size: 0.74rem !important;
+        line-height: 1.32 !important;
+        row-gap: 4px !important;
+    }
+
+    .request-clean-check .field-error {
+        font-size: 0.7rem !important;
+    }
+
+    .request-clean-submit .btn {
+        min-height: 38px !important;
+        padding: 8px 13px !important;
+        font-size: 0.8rem !important;
+    }
+}
